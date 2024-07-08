@@ -1,4 +1,5 @@
+import "./styles/SettingsPage.css";
 function SettingsPage() {
-  return <div>SettingsPage</div>;
+  return <main>SettingsPage</main>;
 }
 export default SettingsPage;

@@ -1,0 +1,43 @@
+.DashNav {
+  position: fixed;
+  height: 7%;
+  width: 80%;
+  bottom: 1;
+  left: 0;
+  transform: translateX(10%);
+  /* padding: 0rem 1rem; */
+  background: #222;
+  border-radius: 10rem;
+  background: red;
+}
+
+.DashNavContainer {
+  /* background: black; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* gap: 2rem; */
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.DashNavContainer a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: white;
+}
+
+.Avatar {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 10rem;
+  overflow: hidden;
+}
+
+.Avatar img {
+  height: 1.5rem;
+  width: 1.5rem;
+}

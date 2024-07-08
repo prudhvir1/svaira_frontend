@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 // import PulseLoader from "react-spinners/PulseLoader";
@@ -51,12 +51,12 @@ const PersistLogin = () => {
   } else if (isError) {
     //persist: yes, token: no
     console.log("error");
-    content = (
-      <p className="errmsg">
-        {`${error?.data?.message} - `}
-        <Link to="/Login">Please login again</Link>.
-      </p>
-    );
+    // content = (
+    //   <p className="errmsg">
+    //     {`${error?.data?.message}`}
+    //   </p>
+    // );
+    content = <Outlet />;
   } else if (isSuccess && trueSuccess) {
     //persist: yes, token: yes
     console.log("success");

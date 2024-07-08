@@ -1,10 +1,11 @@
 import { Outlet } from "react-router";
+import "./styles/LoginPage.css";
 
 function LoginPage() {
   return (
-    <div>
+    <main className="LoginPage">
       <Outlet />
-    </div>
+    </main>
   );
 }
 export default LoginPage;

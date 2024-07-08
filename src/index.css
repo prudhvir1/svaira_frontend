@@ -10,6 +10,10 @@
   font-style: normal;
 }
 
+*:focus {
+  outline: none;
+}
+
 html,
 body {
   height: 100%;
@@ -17,4 +21,8 @@ body {
   background: #222;
   color: #fff;
   color-scheme: dark;
+}
+
+button:hover {
+  cursor: pointer;
 }

@@ -1,4 +1,11 @@
+import "./styles/ProfilePage.css";
+import { ProfileCard } from "../organisms";
+
 function ProfilePage() {
-  return <div>ProfilePage</div>;
+  return (
+    <main>
+      <ProfileCard />
+    </main>
+  );
 }
 export default ProfilePage;

@@ -1,16 +1,19 @@
+import "./styles/HomePage.css";
+import Pipe from "../organisms/Pipe";
+import DashMenu from "../organisms/DashMenu";
+import { Outlet } from "react-router";
 import { useSelector } from "react-redux";
-import { selectCurrentToken } from "../../redux/slices/authSlice";
-import { selectCurrentProfile } from "../../redux/slices/profileSlice";
 
 function HomePage() {
-  const profile = useSelector(selectCurrentProfile);
-  const token = useSelector(selectCurrentToken);
-
+  const { isMobile } = useSelector((state) => state.util);
   return (
-    <div>
-      <p>{profile.profile?.fullName}</p>
-      <p>{token}</p>
-    </div>
+    <>
+      <Outlet />
+      <main>
+        <Pipe />
+        {!isMobile && <DashMenu />}
+      </main>
+    </>
   );
 }
 export default HomePage;

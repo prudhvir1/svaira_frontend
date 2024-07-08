@@ -1,0 +1,117 @@
+.Register {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.RegisterContainer {
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  background: #f8f8ff;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.RegisterContainer > h2 {
+  color: black;
+  font-weight: 700;
+}
+
+.RegisterContainer > p {
+  color: black;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.RegisterContainer > p > strong {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.RegisterContainer > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.RegisterContainer > form > p {
+  color: black;
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.inputDiv {
+  height: 100%;
+  border: 2px solid #888;
+  border-radius: 0.5rem;
+  padding: 0rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.inputDiv > input {
+  width: 100%;
+  background: transparent;
+  padding: 1rem 0.5rem;
+  border: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.EyeBtn {
+  font-size: 1rem;
+  color: #555;
+  background: transparent;
+  border: none;
+  line-height: 0;
+}
+
+.SubmitBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.SubmitBtn > button {
+  border: none;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  background: #e98c00;
+}
+
+.SubmitBtn > button:hover {
+  text-decoration: underline;
+}
+
+.LoginBtn {
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.LoginBtn a {
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  color: #e98c00;
+  border-radius: 0.5rem;
+}
+
+.LoginBtn a:hover {
+  text-decoration: underline;
+}

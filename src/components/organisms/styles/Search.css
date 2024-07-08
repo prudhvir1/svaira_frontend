@@ -1,0 +1,12 @@
+.Search {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  background: #0006;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

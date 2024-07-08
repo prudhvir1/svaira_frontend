@@ -1,0 +1,24 @@
+.DashAside {
+  height: 100%;
+}
+
+.DashAsideContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.DashAsideContainer ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: first flex-start;
+  gap: 2rem;
+}
+
+.DashAsideContainer a {
+  text-decoration: none;
+  color: white;
+}

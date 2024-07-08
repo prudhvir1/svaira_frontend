@@ -1,0 +1,55 @@
+.DesktopLayout {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: auto;
+  position: relative;
+}
+
+.DesktopLayout-Main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.DesktopLayout-Main > aside {
+  height: 100%;
+  width: 20%;
+}
+
+.DesktopLayout-Main > main {
+  height: 100%;
+  width: 55%;
+}
+
+.DesktopLayout-Main > nav {
+  height: 100%;
+  width: 25%;
+}
+
+.DesktopLayout-Modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  backdrop-filter: blur(0.1rem);
+}
+
+.Modal-BG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  opacity: 0.8;
+  z-index: 90;
+}
+
+.Modal-FG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

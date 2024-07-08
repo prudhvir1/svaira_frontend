@@ -1,0 +1,112 @@
+.CreatePost {
+  position: fixed;
+  width: 100dvw;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  background: #0006;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(0.5rem);
+}
+
+.CreatePost-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.CreatePost-Form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.CreatePost-Form-Content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  gap: 1rem;
+}
+
+.Form-Container-Right {
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* .Post-Container {
+  height: inherit;
+  display: flex;
+  align-items: center;
+} */
+
+.Option-Container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* .CreatePost-Form-Buttons {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+} */
+
+/* .CreatePost-Form-Close, */
+.CreatePost-Form-Submit {
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .CreatePost-Form-Close > button {
+  background: transparent;
+  border: 2px solid #999;
+  border-radius: 0.5rem;
+} */
+
+.CreatePost-Form-Submit button {
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 95%;
+  background: #e57200;
+  border: none;
+}
+
+/* .CreatePost-Form-Buttons button {
+  width: 100%;
+  padding: 0.5rem 0rem;
+}  */
+
+.Close-Button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 3rem;
+}
+
+.Close-Button button {
+  background: transparent;
+  padding: 1rem;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 0;
+}

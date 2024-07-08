@@ -1,0 +1,55 @@
+.MobileLayout {
+  width: 100dvw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.MobileLayout-Main {
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MobileLayout-Main > header {
+  height: 8%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MobileLayout-Main > main {
+  height: 84%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MobileLayout-Main > nav {
+  height: 8%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MobileLayout-Modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  backdrop-filter: blur(1rem);
+}

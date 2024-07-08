@@ -1,0 +1,109 @@
+.LoginContainer a:hover {
+  text-decoration: underline !important;
+}
+
+.Login {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.LoginContainer {
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  background: #f8f8ff;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.LoginContainer > h3 {
+  color: black;
+  font-weight: 700;
+}
+
+.LoginContainer > p {
+  color: black;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.LoginContainer a {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  color: #006eff;
+  border-radius: 0.5rem;
+}
+
+.LoginContainer > p > strong {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.LoginContainer > form {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 1rem;
+}
+
+.LoginContainer > form > p {
+  color: black;
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.EyeBtn {
+  font-size: 1rem;
+  color: #555;
+  background: transparent;
+  border: none;
+  line-height: 0;
+}
+
+.SubmitBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.LoginContainer .SubmitBtn > button {
+  border: none;
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  background: #e98c00;
+}
+
+.SubmitBtn > button:hover {
+  text-decoration: underline;
+}
+
+.RegisterBtn a {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  color: #e98c00;
+  border-radius: 0.5rem;
+}
+
+.RegisterBtn a:hover {
+  text-decoration: underline;
+}
+
+.LoginContainer ::placeholder {
+  font-size: 0.7rem;
+}
