@@ -10,3 +10,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.ViewPost-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ViewPost-Content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}

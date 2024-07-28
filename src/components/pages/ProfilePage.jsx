@@ -1,10 +1,16 @@
 import "./styles/ProfilePage.css";
 import { ProfileCard } from "../organisms";
+import ProfilePosts from "../organisms/ProfilePosts";
 
 function ProfilePage() {
   return (
-    <main>
-      <ProfileCard />
+    <main className="ProfilePage">
+      <section>
+        <ProfileCard />
+      </section>
+      <section>
+        <ProfilePosts />
+      </section>
     </main>
   );
 }

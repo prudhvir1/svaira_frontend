@@ -10,3 +10,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.Notifications-Container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

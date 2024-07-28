@@ -1,14 +1,16 @@
 import { Link } from "react-router-dom";
 import "./styles/DashAside.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   createModal,
   notificationsModal,
   searchModal,
 } from "../../redux/slices/modalSlice";
+import { getProfile } from "../../redux/slices/profileSlice";
 
 function DashAside() {
   const dispatch = useDispatch();
+  const { profile } = useSelector(getProfile);
 
   return (
     <div className="DashAside">
@@ -27,7 +29,7 @@ function DashAside() {
         </ul>
         <ul>
           <li>
-            <Link to="Profile">Profile</Link>
+            <Link to={profile?.username}>Profile</Link>
           </li>
           <li onClick={() => dispatch(notificationsModal(true))}>
             Notifications

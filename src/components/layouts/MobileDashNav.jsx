@@ -1,16 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./styles/DashNav.css";
+import "./styles/MobileDashNav.css";
 import ProfilePic from "../../assets/Lion.jpg";
 import { searchModal } from "../../redux/slices/modalSlice";
 import { useDispatch } from "react-redux";
 
-function DashNav() {
+function MobileDashNav() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   return (
-    <div className="DashNav">
-      <div className="DashNavContainer">
+    <div className="MobileDashNav">
+      <div className="MobileDashNavContainer">
         <div className="Icon">
           <button onClick={() => navigate("/")}>
             <svg
@@ -96,4 +96,4 @@ function DashNav() {
     </div>
   );
 }
-export default DashNav;
+export default MobileDashNav;

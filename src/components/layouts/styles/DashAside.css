@@ -1,5 +1,6 @@
 .DashAside {
   height: 100%;
+  padding: 1rem;
 }
 
 .DashAsideContainer {
@@ -16,6 +17,7 @@
   align-items: start;
   justify-content: first flex-start;
   gap: 2rem;
+  list-style-type: none;
 }
 
 .DashAsideContainer a {

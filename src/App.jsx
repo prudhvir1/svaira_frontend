@@ -11,6 +11,8 @@ import { Login, Register } from "./components/organisms";
 import DashLayout from "./components/utils/DashLayout";
 import TrendingPage from "./components/pages/TrendingPage";
 import ViewPost from "./components/organisms/ViewPost";
+import UsersProfilePage from "./components/pages/UsersProfilePage";
+import ProfileRoute from "./components/utils/ProfileRoute";
 
 function App() {
   return (
@@ -31,15 +33,17 @@ function App() {
                 <Route path="/" element={<HomePage />}>
                   <Route path="Post/:id" element={<ViewPost />} />
                 </Route>
-                <Route path="Profile" element={<ProfilePage />} />
+                <Route path=":username" element={<ProfileRoute />} />
                 <Route path="Trending" element={<TrendingPage />} />
                 <Route path="Chat" element={<ChatPage />} />
                 <Route path="Settings" element={<SettingsPage />} />
+                {/* <Route path=":username" element={<UsersProfilePage />} /> */}
               </Route>
               {/* Main End */}
             </Route>
           </Route>
         </Route>
+        {/* Private Routes End */}
       </Route>
     </Routes>
   );

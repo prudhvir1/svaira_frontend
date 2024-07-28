@@ -13,8 +13,8 @@
 
 .CreatePost-Container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* flex-direction: column; */
+  align-items: start;
   justify-content: center;
 }
 
@@ -23,90 +23,105 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-}
-
-.CreatePost-Form-Content {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  /* flex-direction: column; */
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
+  padding: 2rem;
+  background: #222;
+  border-radius: 1rem;
+  /* background: #222; */
 }
 
-.Form-Container-Right {
-  height: inherit;
+.Form-Container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-/* .Post-Container {
-  height: inherit;
+.Post-Container {
+  width: 100%;
   display: flex;
   align-items: center;
-} */
+  justify-content: flex-start;
+}
 
 .Option-Container {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem 2rem;
+  border-radius: 0.5rem;
 }
 
-/* .CreatePost-Form-Buttons {
-  width: 90%;
+.Tags-Container {
+  width: 100%;
+}
+
+.Tags-Container textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border-bottom: 1px solid #999;
+}
+
+.Tags-Container > textarea::-webkit-scrollbar {
+  width: 1px;
+}
+
+.Tags-Container > textarea::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 2px;
+}
+
+.Form-Buttons {
+  height: 3rem;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 2rem;
-} */
+}
 
-/* .CreatePost-Form-Close, */
-.CreatePost-Form-Submit {
-  border-radius: 0.5rem;
-  height: 2rem;
-  width: 100%;
+.Form-Submit {
+  border-radius: 0.2rem;
+  height: 3rem;
+  width: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* .CreatePost-Form-Close > button {
-  background: transparent;
-  border: 2px solid #999;
+.Form-Submit button {
+  font-size: 1rem;
   border-radius: 0.5rem;
-} */
-
-.CreatePost-Form-Submit button {
-  border-radius: 0.5rem;
-  height: 2rem;
-  width: 95%;
+  height: 100%;
+  width: 100%;
   background: #e57200;
   border: none;
 }
 
-/* .CreatePost-Form-Buttons button {
+.Form-Submit button:disabled {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  height: 100%;
   width: 100%;
-  padding: 0.5rem 0rem;
-}  */
-
-.Close-Button {
-  position: fixed;
-  top: 0;
-  right: 0;
-  padding: 3rem;
+  background: transparent;
+  border: 2px solid #e57200c1;
+  color: #999;
 }
 
 .Close-Button button {
   background: transparent;
   padding: 1rem;
   border: none;
+  border-radius: 5rem;
   font-size: 1.5rem;
   line-height: 0;
+  transition: all 0.2s ease-in-out;
 }

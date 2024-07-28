@@ -18,12 +18,7 @@
 
 .DesktopLayout-Main > main {
   height: 100%;
-  width: 55%;
-}
-
-.DesktopLayout-Main > nav {
-  height: 100%;
-  width: 25%;
+  width: 80%;
 }
 
 .DesktopLayout-Modal {

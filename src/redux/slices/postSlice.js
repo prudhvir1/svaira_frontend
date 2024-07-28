@@ -1,21 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  post: { text: "", image: null },
-  option1: { text: "", image: null },
-  option2: { text: "", image: null },
+  pipePosts: [],
+  userPosts: [],
 };
 
 const postSlice = createSlice({
-  name: "util",
+  name: "post",
   initialState,
   reducers: {
-    postData: (state, action) => {
-      state.isMobile = action.payload;
+    setPipePosts: (state, action) => {
+      console.log(action.payload);
+      state.pipePosts = action.payload;
+    },
+    setUserPosts: (state, action) => {
+      state.userPosts = action.payload;
     },
   },
 });
 
-export const { postData } = postSlice.actions;
+export const { setPipePosts, setUserPosts } = postSlice.actions;
+
+export const getPost = (state) => state.post;
 
 export default postSlice.reducer;

@@ -1,0 +1,25 @@
+.ImageOptionButton {
+  height: 100%;
+}
+
+.ImageOptionButton-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ImageOptionButton-Image {
+  width: 100%;
+}
+
+.ImageOptionButton-Image img {
+  height: 10rem;
+  /* width: 100%; */
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+
+.ImageOptionButton-Text {
+}

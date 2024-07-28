@@ -18,7 +18,14 @@ export const profileApiSlice = apiSlice.injectEndpoints({
         }
       },
     }),
+    getUsersProfile: builder.mutation({
+      query: (username) => ({
+        url: `/user/profile/${username}`,
+        method: "GET",
+      }),
+    }),
   }),
 });
 
-export const { useGetProfileQuery } = profileApiSlice;
+export const { useGetProfileQuery, useGetUsersProfileMutation } =
+  profileApiSlice;

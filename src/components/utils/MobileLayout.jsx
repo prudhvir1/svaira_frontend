@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import "./styles/MobileLayout.css";
-import DashNav from "../layouts/DashNav";
+import MobileDashNav from "../layouts/MobileDashNav";
 
 function MobileLayout() {
   return (
@@ -10,7 +10,7 @@ function MobileLayout() {
           <Outlet />
         </main>
         <nav>
-          <DashNav />
+          <MobileDashNav />
         </nav>
       </div>
     </div>

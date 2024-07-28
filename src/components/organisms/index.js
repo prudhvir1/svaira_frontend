@@ -1,9 +1,10 @@
 import CreatePost from "./CreatePost";
-import DashMenu from "./DashMenu";
+import DashMenu from "../layouts/DashMenu";
 import Login from "./Login";
 import MobileCreatePost from "./MobileCreatePost";
 import MobileSearch from "./MobileSearch";
 import Notifications from "./Notifications";
+import UsersProfile from "./UsersProfile";
 import Pipe from "./Pipe";
 import ProfileCard from "./ProfileCard";
 import Register from "./Register";
@@ -22,4 +23,5 @@ export {
   Notifications,
   MobileCreatePost,
   MobileSearch,
+  UsersProfile,
 };

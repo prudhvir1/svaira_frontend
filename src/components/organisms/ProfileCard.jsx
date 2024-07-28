@@ -1,8 +1,21 @@
+import "./styles/ProfileCard.css";
 import { useSelector } from "react-redux";
-import { selectCurrentProfile } from "../../redux/slices/profileSlice";
+import { getProfile } from "../../redux/slices/profileSlice";
 function ProfileCard() {
-  const profile = useSelector(selectCurrentProfile);
+  const { profile } = useSelector(getProfile);
 
-  return <div>{profile.profile?.fullname}</div>;
+  return (
+    <div className="ProfileCard">
+      <div className="ProfileCard-Container">
+        <div className="ProfileCard-Avatar">
+          <img src={profile?.avatar?.url} alt={profile?.avatar?.filename} />
+        </div>
+        <div className="ProfileCard-Details">
+          <h1>{profile?.fullname}</h1>
+          <p>/{profile?.username}</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 export default ProfileCard;

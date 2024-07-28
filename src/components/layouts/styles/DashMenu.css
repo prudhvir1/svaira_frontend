@@ -1,0 +1,69 @@
+.DashMenu {
+  width: 100%;
+  padding: 1rem 2rem;
+}
+.DashMenu-Container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 2rem;
+}
+.DashMenu-CreatePost {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.DashMenu-CreatePost button {
+  border: transparent;
+  background: #e09100;
+  width: 100%;
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.DashMenu-Profile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.DashMenu-Profile-Details {
+}
+
+.DashMenu-Profile-Details h4 {
+  font-size: 1.2rem;
+}
+
+.DashMenu-Profile-Details p {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.DashMenu-Profile-Avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+.DashMenu-Profile-Avatar img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+}
+
+.DashMenu-Suggestions {
+}
+.DashMenu-Footer {
+}
