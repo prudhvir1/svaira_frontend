@@ -3,11 +3,10 @@
 
 .UsersProfile-Container {
   width: 100%;
-  height: 100dvh;
+  height: 100%;
   overflow-y: auto;
 }
-.UsersProfile-Header {
-}
+
 .UsersProfile-Header-Container {
   display: flex;
   align-items: center;
@@ -28,7 +27,7 @@
   object-fit: cover;
 }
 
-.UsersProfile-Details {
+.UsersProfile-Info {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -36,10 +35,59 @@
   gap: 1rem;
 }
 
-.UsersProfile-Follow button {
+.UsersProfile-About {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.UsersProfile-About-Name {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.UsersProfile-About-Name h2 {
+  font-size: 1.5rem;
+}
+
+.UsersProfile-About-Name h4 {
+  font-size: 0.8rem;
+}
+
+.UsersProfile-FollowBtn {
+  /* background: #ffaa00; */
+  /* border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  font-size: 0.8rem; */
+}
+
+.UsersProfile-Follow .UsersProfile-FollowBtn-Following {
+  background: transparent;
+  border: 1px solid #999;
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.UsersProfile-Follow .UsersProfile-FollowBtn-Follow {
   background: #ffaa00;
   border: none;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 0.2rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
+}
+
+.UserProfile-Desc {
+}
+
+.UserProfile-Desc-Main {
+}
+.UserProfile-Desc-Default {
+  font-size: 0.9rem;
+  opacity: 0.8;
 }

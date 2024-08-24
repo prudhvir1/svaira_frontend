@@ -135,16 +135,12 @@ function CreatePost() {
             {/* Tags Container Block */}
 
             <div className="Tags-Container">
-              {isTags ? (
-                <textarea
-                  name="tags"
-                  id=""
-                  onChange={handleTags}
-                  placeholder="Add Tags"
-                ></textarea>
-              ) : (
-                <button onClick={() => setIsTags(true)}>+ Tags</button>
-              )}
+              <textarea
+                name="tags"
+                id=""
+                onChange={handleTags}
+                placeholder="Add Tags"
+              ></textarea>
             </div>
 
             {/* Error Message Block */}

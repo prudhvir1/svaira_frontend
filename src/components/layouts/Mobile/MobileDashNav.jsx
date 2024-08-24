@@ -1,12 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
-import "./styles/MobileDashNav.css";
-import ProfilePic from "../../assets/Lion.jpg";
-import { searchModal } from "../../redux/slices/modalSlice";
-import { useDispatch } from "react-redux";
+import "../styles/MobileDashNav.css";
+import { searchModal } from "../../../redux/slices/modalSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { getProfile } from "../../../redux/slices/profileSlice";
 
 function MobileDashNav() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { profile } = useSelector(getProfile);
 
   return (
     <div className="MobileDashNav">
@@ -88,7 +90,7 @@ function MobileDashNav() {
         <div className="Icon">
           <Link to="Profile">
             <div className="Avatar">
-              <img src={ProfilePic} alt="Profile" />
+              <img src={profile?.avatar.url} alt={profile?.username} />
             </div>
           </Link>
         </div>

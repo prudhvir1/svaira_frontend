@@ -1,4 +1,4 @@
-import { setProfile } from "../slices/profileSlice";
+import { setProfile, setUsersProfile } from "../slices/profileSlice";
 import { apiSlice } from "./apiSlice";
 
 export const profileApiSlice = apiSlice.injectEndpoints({
@@ -23,6 +23,14 @@ export const profileApiSlice = apiSlice.injectEndpoints({
         url: `/user/profile/${username}`,
         method: "GET",
       }),
+      async onQueryStarted(arg, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled;
+          dispatch(setUsersProfile(data.data));
+        } catch (err) {
+          console.log(err);
+        }
+      },
     }),
   }),
 });

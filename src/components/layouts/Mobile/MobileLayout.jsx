@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
-import "./styles/MobileLayout.css";
-import MobileDashNav from "../layouts/MobileDashNav";
+import "../styles/MobileLayout.css";
+import MobileDashNav from "./MobileDashNav";
 
 function MobileLayout() {
   return (

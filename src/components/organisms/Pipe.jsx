@@ -2,16 +2,17 @@ import "./styles/Pipe.css";
 import { useEffect, useState } from "react";
 import { useFetchPipePostsMutation } from "../../redux/api/postApiSlice";
 import { Link } from "react-router-dom";
-import PostCard from "../molecules/PostCard";
+import PostCard from "../molecules/PostCard/PostCard";
 
 function Pipe() {
   const [posts, setPosts] = useState([]);
-  const [fetchPosts, { isLoading, isSuccess, isError }] =
+  const [fetchPipePosts, { isLoading, isSuccess, isError }] =
     useFetchPipePostsMutation();
 
   const fetchPost = async () => {
-    const res = await fetchPosts().unwrap();
+    const res = await fetchPipePosts().unwrap();
     setPosts(res.data);
+    console.log(res.data);
   };
 
   useEffect(() => {
@@ -22,6 +23,7 @@ function Pipe() {
     <section className="Pipe">
       <div className="Pipe-Container">
         {isLoading && <p>Loading...</p>}
+        {isSuccess && posts.length === 0 && <p>No Posts to vote...</p>}
         {isSuccess &&
           posts.map((post) => <PostCard key={post._id} post={post} />)}
         {isError && <p>Something went wrong!</p>}

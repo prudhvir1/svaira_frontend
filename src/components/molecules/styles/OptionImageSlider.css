@@ -1,0 +1,21 @@
+.OptionImageSlider {
+}
+.OptionImageSlider-Container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 0.5rem;
+  /* scroll-behavior: smooth; */
+  scroll-snap-type: x mandatory;
+}
+
+.OptionImageSlider-Container::-webkit-scrollbar {
+  height: 0px;
+}
+
+.OptionImageSlider-Container::-webkit-scrollbar-thumb {
+  background: #999;
+}

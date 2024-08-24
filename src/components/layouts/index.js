@@ -1,15 +1,23 @@
-import DashAside from "./DashAside";
-import DashHeader from "./DashHeader";
-import DashMenu from "./DashMenu";
-import DesktopModal from "./DesktopModal";
-import MobileDashNav from "./MobileDashNav";
-import MobileModal from "./MobileModal";
+import DashAside from "./Desktop/DashAside";
+import MobileDashHeader from "./Mobile/MobileDashHeader";
+import DashMenu from "./Desktop/DashMenu";
+import DesktopModal from "./Desktop/DesktopModal";
+import MobileDashNav from "./Mobile/MobileDashNav";
+import MobileModal from "./Mobile/MobileModal";
+import Layout from "./Layout";
+import MobileLayout from "./Mobile/MobileLayout";
+import DesktopLayout from "./Desktop/DesktopLayout";
+import DashLayout from "./DashLayout";
 
 export {
-  DashHeader,
+  DashLayout,
+  MobileDashHeader,
   DashAside,
   MobileDashNav,
   DashMenu,
   DesktopModal,
   MobileModal,
+  Layout,
+  MobileLayout,
+  DesktopLayout,
 };

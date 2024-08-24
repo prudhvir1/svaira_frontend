@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useSelector } from "react-redux";
-import "./styles/DesktopModal.css";
-import { CreatePost, Notifications, Search, ViewPost } from "../organisms";
+import "../styles/DesktopModal.css";
+import { CreatePost, Notifications, Search, ViewPost } from "../../organisms";
 
 function DesktopModal() {
   const {

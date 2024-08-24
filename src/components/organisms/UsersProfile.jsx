@@ -3,7 +3,6 @@ import { useFollowUserMutation } from "../../redux/api/userApiSlice";
 import "./styles/UsersProfile.css";
 
 function UsersProfile({ userProfile }) {
-  console.log(userProfile);
   return (
     <div className="UsersProfile">
       <div className="UsersProfile-Container">
@@ -28,14 +27,38 @@ function UsersProfile_Header({ profile }) {
     <div className="UsersProfile-Header">
       <div className="UsersProfile-Header-Container">
         <div className="UsersProfile-Avatar">
-          <img src={profile.avatar.url} alt={profile.avatar.filename} />
+          <img src={profile.avatar.url} alt={profile.username} />
         </div>
-        <div className="UsersProfile-Details">
-          <h2>{profile.fullname}</h2>
-          <h4>{profile.username}</h4>
-        </div>
-        <div className="UsersProfile-Follow">
-          <button onClick={handleFollowUser}>Follow</button>
+        <div className="UsersProfile-Info">
+          <div className="UsersProfile-About">
+            <div className="UsersProfile-About-Name">
+              <h2>{profile.fullname}</h2>
+              <h4>/{profile.username}</h4>
+            </div>
+            <div className="UsersProfile-Follow">
+              <div
+                className="UsersProfile-FollowBtn"
+                onClick={handleFollowUser}
+              >
+                {profile.isFollowing ? (
+                  <button className="UsersProfile-FollowBtn-Following">
+                    Following
+                  </button>
+                ) : (
+                  <button className="UsersProfile-FollowBtn-Follow">
+                    Follow
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="UserProfile-Desc">
+            {profile?.bio ? (
+              <p className="UserProfile-Desc-Main">{profile.bio}</p>
+            ) : (
+              <p className="UserProfile-Desc-Default">Bio</p>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import CreatePost from "./CreatePost";
-import DashMenu from "../layouts/DashMenu";
+import DashMenu from "../layouts/Desktop/DashMenu";
 import Login from "./Login";
 import MobileCreatePost from "./MobileCreatePost";
 import MobileSearch from "./MobileSearch";

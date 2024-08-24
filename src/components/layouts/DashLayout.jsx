@@ -1,10 +1,8 @@
 import { useEffect } from "react";
-import MobileLayout from "./MobileLayout";
-import DesktopLayout from "./DesktopLayout";
 import { useDispatch, useSelector } from "react-redux";
-import MobileModal from "../layouts/MobileModal";
-import DesktopModal from "../layouts/DesktopModal";
 import { screenWidth } from "../../redux/slices/utilSlice";
+import MobileModal from "./Mobile/MobileModal";
+import { DesktopLayout, DesktopModal, MobileLayout } from ".";
 function DashLayout() {
   const dispatch = useDispatch();
 

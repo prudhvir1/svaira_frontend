@@ -1,0 +1,116 @@
+import { Link, useLocation } from "react-router-dom";
+import "../styles/DashAside.css";
+import { useDispatch, useSelector } from "react-redux";
+import { createModal, searchModal } from "../../../redux/slices/modalSlice";
+import { getProfile } from "../../../redux/slices/profileSlice";
+// import { getProfile } from "../../../redux/slices/profileSlice";
+
+function DashAside() {
+  const dispatch = useDispatch();
+  const location = useLocation();
+  const { profile } = useSelector(getProfile);
+
+  return (
+    <div className="DashAside">
+      <div className="DashAside-Container">
+        <ul>
+          <li className="DashAside-Logo">
+            <Link to="">S.</Link>
+          </li>
+          <li>
+            <a onClick={() => dispatch(createModal(true))}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25z"
+                ></path>
+                <path
+                  fill="currentColor"
+                  fillRule="evenodd"
+                  d="M12.057 1.25h-.114c-2.309 0-4.118 0-5.53.19c-1.444.194-2.584.6-3.479 1.494c-.895.895-1.3 2.035-1.494 3.48c-.19 1.411-.19 3.22-.19 5.529v.114c0 2.309 0 4.118.19 5.53c.194 1.444.6 2.584 1.494 3.479c.895.895 2.035 1.3 3.48 1.494c1.411.19 3.22.19 5.529.19h.114c2.309 0 4.118 0 5.53-.19c1.444-.194 2.584-.6 3.479-1.494c.895-.895 1.3-2.035 1.494-3.48c.19-1.411.19-3.22.19-5.529v-.114c0-2.309 0-4.118-.19-5.53c-.194-1.444-.6-2.584-1.494-3.479c-.895-.895-2.035-1.3-3.48-1.494c-1.411-.19-3.22-.19-5.529-.19M3.995 3.995c.57-.57 1.34-.897 2.619-1.069c1.3-.174 3.008-.176 5.386-.176s4.086.002 5.386.176c1.279.172 2.05.5 2.62 1.069c.569.57.896 1.34 1.068 2.619c.174 1.3.176 3.008.176 5.386s-.002 4.086-.176 5.386c-.172 1.279-.5 2.05-1.069 2.62c-.57.569-1.34.896-2.619 1.068c-1.3.174-3.008.176-5.386.176s-4.086-.002-5.386-.176c-1.279-.172-2.05-.5-2.62-1.069c-.569-.57-.896-1.34-1.068-2.619c-.174-1.3-.176-3.008-.176-5.386s.002-4.086.176-5.386c.172-1.279.5-2.05 1.069-2.62"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </a>
+          </li>
+          <li
+            style={{
+              background: location.pathname === "/Explore" ? "#111" : "",
+            }}
+          >
+            <a onClick={() => dispatch(searchModal(true))}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <g fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="11.5" cy="11.5" r="9.5"></circle>
+                  <path strokeLinecap="round" d="m20 20l2 2"></path>
+                </g>
+              </svg>
+            </a>
+          </li>
+          <li
+            style={{
+              background: location.pathname === "/Activity" ? "#111" : "",
+            }}
+          >
+            <Link to="Activity">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 32 32"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 29a1 1 0 0 1-.92-.62L6.33 17H2v-2h5a1 1 0 0 1 .92.62L12 25.28l8.06-21.63A1 1 0 0 1 21 3a1 1 0 0 1 .93.68L25.72 15H30v2h-5a1 1 0 0 1-.95-.68L21 7l-8.06 21.35A1 1 0 0 1 12 29"
+                ></path>
+              </svg>
+            </Link>
+          </li>
+
+          <li
+            style={{
+              background: location.pathname === "/Settings" ? "#111" : "",
+            }}
+          >
+            <Link to="Settings">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M7 12a2 2 0 1 1-4 0a2 2 0 0 1 4 0m7 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0m7 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0"
+                ></path>
+              </svg>
+            </Link>
+          </li>
+        </ul>
+
+        <button
+          className={
+            location.pathname === `/${profile?.username}`
+              ? "DashAside-Avatar active"
+              : "DashAside-Avatar"
+          }
+        >
+          <Link to={profile?.username}>
+            <img src={profile?.avatar.url} alt={profile?.username} />
+          </Link>
+        </button>
+      </div>
+    </div>
+  );
+}
+export default DashAside;

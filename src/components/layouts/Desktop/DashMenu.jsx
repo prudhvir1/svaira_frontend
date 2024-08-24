@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import "./styles/DashMenu.css";
+import "../styles/DashMenu.css";
 import { useEffect } from "react";
-import { createModal } from "../../redux/slices/modalSlice";
-import { getProfile } from "../../redux/slices/profileSlice";
+import { createModal } from "../../../redux/slices/modalSlice";
+import { getProfile } from "../../../redux/slices/profileSlice";
+import { useNavigate } from "react-router";
 
 function DashMenu() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { profile } = useSelector(getProfile);
 
@@ -14,7 +16,10 @@ function DashMenu() {
   return (
     <div className="DashMenu">
       <div className="DashMenu-Container">
-        <div className="DashMenu-Profile">
+        <div
+          className="DashMenu-Profile"
+          onClick={() => navigate(`/${profile.username}`)}
+        >
           <div className="DashMenu-Profile-Details">
             <h4>{profile?.fullname}</h4>
             <p>/{profile?.username}</p>

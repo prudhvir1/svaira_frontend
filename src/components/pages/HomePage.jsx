@@ -1,14 +1,14 @@
 import "./styles/HomePage.css";
 import Pipe from "../organisms/Pipe";
-import DashMenu from "../layouts/DashMenu";
-import { Outlet } from "react-router";
+import DashMenu from "../layouts/Desktop/DashMenu";
+import { Outlet, Route, Routes } from "react-router";
 import { useSelector } from "react-redux";
+import { ViewPost } from "../organisms";
 
 function HomePage() {
   const { isMobile } = useSelector((state) => state.util);
   return (
     <>
-      <Outlet />
       <main className="HomePage">
         <div className="Pipe-Panel">
           <Pipe />
@@ -19,6 +19,9 @@ function HomePage() {
           </div>
         )}
       </main>
+      {/* <Routes>
+        <Route path="post/:post" element={<ViewPost />} />
+      </Routes> */}
     </>
   );
 }

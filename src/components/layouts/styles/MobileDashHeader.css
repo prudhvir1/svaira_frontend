@@ -1,10 +1,10 @@
-.DashHeader {
+.MobileDashHeader {
   display: none;
   width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-  .DashHeader {
+  .MobileDashHeader {
     display: contents;
   }
 }

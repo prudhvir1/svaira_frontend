@@ -22,15 +22,14 @@
 }
 
 .PostCard-Container {
-  border-radius: 1rem;
-  /* overflow: hidden; */
+  border-radius: 0.2rem;
   padding: 1rem;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(45, 45, 45, 0.7);
+  background: rgba(45, 45, 45, 0.3);
   gap: 1rem;
   backdrop-filter: blur(5rem);
 }
@@ -61,6 +60,7 @@
 
 .PostCard-Header-Username {
   font-size: 0.9rem;
+  cursor: pointer;
 }
 
 .PostCard-Header-Username p {
@@ -81,23 +81,34 @@
 }
 
 .PostCard-Content-Main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .PostCard-Content-Main-Image {
   width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .PostCard-Content-Main-Image img {
   border-radius: 0.5rem;
   width: 100%;
-  height: 100%;
+  max-height: 15rem;
   object-fit: contain;
 }
 
-.PostCard-Content-Main-Text {
+.PostCard-Content-Main-Text p {
+  /* font-family: "Montserrat", sans-serif;  */
   font-size: 1.3rem;
-  font-weight: 900;
-  padding: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .PostCard-Content-Options {
@@ -133,49 +144,63 @@
   flex-wrap: wrap;
 }
 
-.PostCard-Footer {
-  /* border-top: 1px solid #ccc; */
-  /* padding-top: 1rem; */
-  width: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: start;
-  gap: 1rem;
+.PostCard-Content-Options-Text.disable,
+.PostCard-Content-Options-Image.disable,
+.PostCard-Content-Options-Text.disable *,
+.PostCard-Content-Options-Image.disable * {
+  cursor: not-allowed;
+  pointer-events: none;
+  user-select: none;
 }
 
-.PostCard-Footer-Responses {
+.PostCard-Responses {
   width: 100%;
+  font-size: 0.7rem;
+  font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 0.8rem;
+  padding: 0rem 0.5rem;
 }
 
-.PostCard-Footer-Comment,
-.PostCard-Footer-Share {
+.PostCard-Responses p,
+button {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.PostCard-Responses button {
+  background: transparent;
+  border: none;
+}
+
+.PostCard-Responses button:hover {
+  text-decoration: underline;
+}
+
+.PostCard-Footer {
+  width: 100%;
+}
+
+.PostCard-Footer-Container {
+  width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-}
-
-.PostCard-Footer-Comment {
-  align-items: flex-start;
-  width: 100%;
-  gap: 0.3rem;
+  border-radius: 0.5rem;
+  gap: 1rem;
+  background: #0004;
+  padding: 0.7rem;
 }
 
 .PostCard-Footer-Comment-Input {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   gap: 0.5rem;
-  background: #1115;
-  border-radius: 10rem;
 }
 
 .PostCard-Footer-Comment-Input textarea {
@@ -183,9 +208,11 @@
   align-content: center;
   width: 100%;
   border: none;
-  padding: 0.2rem 1rem;
-  /* border-bottom: 1px solid #999; */
   resize: none;
+}
+
+.PostCard-Footer-Comment-Input textarea::placeholder {
+  color: #fff9;
 }
 
 .PostCard-Footer-Comment-Input textarea::-webkit-scrollbar {
@@ -214,54 +241,44 @@
   cursor: pointer;
 }
 
-.PostCard-Footer-Comment-ViewButton {
-  width: 100%;
-  padding-left: 0.5rem;
+.PostCard-Footer-Container hr {
+  width: 2rem;
+  transform: rotate(90deg);
+  margin: -1rem;
 }
 
-.PostCard-Footer-Comment-ViewButton button {
-  height: 100%;
-  background: none;
-  border: none;
-  font-size: 0.8rem;
-  color: #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: end;
-  gap: 0.1rem;
-}
-
-.PostCard-Footer-Comment-ViewButton button:hover {
-  color: white;
-}
-
-.PostCard-Footer-Comment-ViewButton button svg {
-  transform: scaleX(-1);
-}
-
-.PostCard-Footer-Share {
-  height: 100%;
-  align-items: center;
-}
-
-.PostCard-Footer-Share-Button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.PostCard-Footer-Share-Button button {
-  align-content: center;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-}
-
-.PostCard-Footer-Share-Count {
-  height: 100%;
+.PostCard-Footer-Share,
+.PostCard-Footer-Comments {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.8rem;
+  gap: 0.2rem;
+  cursor: pointer;
+}
+
+.PostCard-Footer-Share-Button,
+.PostCard-Footer-Comments-Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.PostCard-Footer-Share-Count,
+.PostCard-Footer-Comments-Count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+}
+
+@media screen and (max-width: 768px) {
+  .PostCard {
+    border-radius: 0.3rem;
+  }
 }

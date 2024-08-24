@@ -1,6 +1,6 @@
-import "./styles/DesktopLayout.css";
+import "../styles/DesktopLayout.css";
 import { Outlet } from "react-router";
-import { DashAside } from "../layouts";
+import { DashAside } from "..";
 
 function DesktopLayout() {
   return (

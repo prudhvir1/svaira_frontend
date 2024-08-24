@@ -25,6 +25,7 @@ function Search() {
   };
 
   useEffect(() => {
+    searchRef.current.focus();
     // Set a timeout to update the debounced value after 3 seconds
     const handler = setTimeout(() => {
       setDebouncedValue(searchInput);

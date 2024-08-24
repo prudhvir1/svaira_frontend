@@ -13,12 +13,13 @@
 
 .DesktopLayout-Main > aside {
   height: 100%;
-  width: 20%;
+  width: 10%;
+  /* background: red; */
 }
 
 .DesktopLayout-Main > main {
   height: 100%;
-  width: 80%;
+  width: 90%;
 }
 
 .DesktopLayout-Modal {
