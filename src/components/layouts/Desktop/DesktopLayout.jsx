@@ -1,13 +1,13 @@
 import "../styles/DesktopLayout.css";
 import { Outlet } from "react-router";
-import { DashAside } from "..";
+import { DashNav } from "..";
 
 function DesktopLayout() {
   return (
     <div className="DesktopLayout">
       <div className="DesktopLayout-Main">
         <aside>
-          <DashAside />
+          <DashNav />
         </aside>
         <main>
           <Outlet />

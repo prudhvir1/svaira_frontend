@@ -95,7 +95,7 @@ function PostInputCard({ post, isPostError, setIsPostError }) {
               </svg>
             </button>
           </div>
-          <div className="PostVideo">
+          {/* <div className="PostVideo">
             <input
               type="file"
               name="post"
@@ -120,7 +120,7 @@ function PostInputCard({ post, isPostError, setIsPostError }) {
                 ></path>
               </svg>
             </button>
-          </div>
+          </div> */}
         </div>
       )}
       <div className="PostInputCard-Main">

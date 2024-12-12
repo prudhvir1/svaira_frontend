@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useSelector } from "react-redux";
 import "../styles/MobileModal.css";
-import { CreatePost, MobileSearch, Notifications } from "../../organisms";
+import { MobileCreatePost, MobileSearch, Notifications } from "../../organisms";
 
 function MobileModal() {
   const { isSearchModal, isCreateModal, isNotificationsModal } = useSelector(
@@ -10,7 +10,7 @@ function MobileModal() {
   return (
     <div className="MobileModal">
       {isSearchModal && <MobileSearch />}
-      {isCreateModal && <CreatePost />}
+      {isCreateModal && <MobileCreatePost />}
       {isNotificationsModal && <Notifications />}
     </div>
   );

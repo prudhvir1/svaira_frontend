@@ -113,3 +113,14 @@
   border: 2px solid red;
   border-radius: 0.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .PostInputCard {
+    flex-direction: column;
+  }
+
+  .PostInputCard-Menu {
+    height: 100%;
+    width: 100%;
+  }
+}

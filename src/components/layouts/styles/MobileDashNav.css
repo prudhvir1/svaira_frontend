@@ -1,27 +1,60 @@
 .MobileDashNav {
   position: fixed;
   height: 7%;
-  width: 80%;
-  bottom: 0;
-  left: 0;
-  transform: translateX(10%);
-  /* padding: 0rem 1rem; */
-  background: #222;
-  border-radius: 10rem;
-  /* background: red; */
+  /* width: 55%; */
+  bottom: 1rem;
+  left: auto;
+  z-index: 500;
 }
 
 .MobileDashNavContainer {
-  /* background: black; */
+  background: none;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* gap: 2rem; */
+  gap: 0.5rem;
   font-size: 1.2rem;
   font-weight: bold;
   line-height: 0;
+}
+
+.MobileDashNavContainer > ul {
+  border-radius: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style-type: none;
+  font-size: 1.5rem;
+  background: #1c1c1c;
+  padding: 0.5rem 1rem;
+}
+
+.MobileDashNavContainer a {
+  text-decoration: none;
+  color: white;
+  line-height: 0;
+}
+
+.MobileDashNavContainer li {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+
+.MobileDashNavContainer img {
+  border-radius: 0.3rem;
+  width: 2.5rem;
+  width: 100%;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.MobileDashNavContainer button {
+  all: unset;
+  cursor: pointer;
 }
 
 .MobileDashNavContainer a {

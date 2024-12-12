@@ -1,4 +1,4 @@
-import DashAside from "./Desktop/DashAside";
+import DashNav from "./Desktop/DashNav";
 import MobileDashHeader from "./Mobile/MobileDashHeader";
 import DashMenu from "./Desktop/DashMenu";
 import DesktopModal from "./Desktop/DesktopModal";
@@ -12,7 +12,7 @@ import DashLayout from "./DashLayout";
 export {
   DashLayout,
   MobileDashHeader,
-  DashAside,
+  DashNav,
   MobileDashNav,
   DashMenu,
   DesktopModal,

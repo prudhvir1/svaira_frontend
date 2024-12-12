@@ -1,4 +1,4 @@
-.DashAside {
+.DashNav {
   height: 100%;
   width: 100%;
   display: flex;
@@ -7,7 +7,8 @@
   justify-content: center;
 }
 
-.DashAside-Container {
+.DashNav-Container {
+  position: fixed;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -16,7 +17,7 @@
   gap: 2rem;
 }
 
-.DashAside-Container ul {
+.DashNav-Container ul {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -30,28 +31,28 @@
   padding: 0.5rem 0rem;
 }
 
-.DashAside-Container a {
+.DashNav-Container a {
   text-decoration: none;
   color: white;
   line-height: 0;
 }
 
-.DashAside-Container li {
+.DashNav-Container li {
   padding: 1rem;
   border-radius: 0.2rem;
 }
 
-.DashAside-Logo {
+.DashNav-Logo {
   background: #ff9900;
   align-content: center;
-  line-height: 0.9;
+  line-height: 0.7;
 }
 
-.DashAside-Container li:not(:first-child) {
+.DashNav-Container li:not(:first-child) {
   line-height: 0;
 }
 
-.DashAside-Container li:not(:first-child):hover {
+.DashNav-Container li:not(:first-child):hover {
   background: #111;
 }
 
@@ -59,7 +60,7 @@
   background: #111;
 }
 
-.DashAside-Avatar {
+.DashNav-Avatar {
   all: unset;
   /* width: 100%; */
   display: flex;
@@ -71,7 +72,7 @@
   background: #222;
 }
 
-.DashAside-Avatar img {
+.DashNav-Avatar img {
   border-radius: 0.3rem;
   width: 2.5rem;
   width: 100%;

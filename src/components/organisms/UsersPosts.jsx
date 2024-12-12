@@ -14,10 +14,6 @@ function UsersPosts({ userId }) {
     console.log(res.data);
   };
 
-  // const user = useSelector((state) => state[apiSlice.reducerPath]);
-  // console.log(user);
-  // // const { usersProfile } = useSelector(getUsersProfile);
-
   useEffect(() => {
     if (userId) fetchPost();
   }, [userId]);

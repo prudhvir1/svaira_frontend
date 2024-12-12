@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import DesktopModal from "./DesktopModal";
-import MobileModal from "./MobileModal";
+import DesktopModal from "./Desktop/DesktopModal";
+import MobileModal from "./Mobile/MobileModal";
 function ModalLayout() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isModal, setIsModal] = useState(false);

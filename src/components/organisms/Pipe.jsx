@@ -12,7 +12,6 @@ function Pipe() {
   const fetchPost = async () => {
     const res = await fetchPipePosts().unwrap();
     setPosts(res.data);
-    console.log(res.data);
   };
 
   useEffect(() => {

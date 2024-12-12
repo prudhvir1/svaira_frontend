@@ -12,7 +12,7 @@ function ProfileCard() {
         </div>
         <div className="ProfileCard-Details">
           <div className="ProfileCard-Details-Name">
-            <h1>{profile?.fullname}</h1>
+            <h2>{profile?.fullname}</h2>
             <p>/{profile?.username}</p>
           </div>
           <div className="ProfileCard-Details-Info">

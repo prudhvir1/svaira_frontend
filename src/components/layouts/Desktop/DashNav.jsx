@@ -1,20 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
-import "../styles/DashAside.css";
+import "../styles/DashNav.css";
 import { useDispatch, useSelector } from "react-redux";
 import { createModal, searchModal } from "../../../redux/slices/modalSlice";
 import { getProfile } from "../../../redux/slices/profileSlice";
 // import { getProfile } from "../../../redux/slices/profileSlice";
 
-function DashAside() {
+function DashNav() {
   const dispatch = useDispatch();
   const location = useLocation();
   const { profile } = useSelector(getProfile);
 
   return (
-    <div className="DashAside">
-      <div className="DashAside-Container">
+    <div className="DashNav">
+      <div className="DashNav-Container">
         <ul>
-          <li className="DashAside-Logo">
+          <li className="DashNav-Logo">
             <Link to="">S.</Link>
           </li>
           <li>
@@ -101,8 +101,8 @@ function DashAside() {
         <button
           className={
             location.pathname === `/${profile?.username}`
-              ? "DashAside-Avatar active"
-              : "DashAside-Avatar"
+              ? "DashNav-Avatar active"
+              : "DashNav-Avatar"
           }
         >
           <Link to={profile?.username}>
@@ -113,4 +113,4 @@ function DashAside() {
     </div>
   );
 }
-export default DashAside;
+export default DashNav;
