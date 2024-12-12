@@ -1,7 +1,7 @@
 import "./styles/UsersProfilePage.css";
 import { lazy, Suspense, useEffect, useState } from "react";
 import { UsersProfile } from "../organisms";
-import { useLocation, useParams } from "react-router";
+import { useParams } from "react-router";
 import { useGetUsersProfileMutation } from "../../redux/api/profileApiSlice";
 // import UsersPosts from "../organisms/UsersPosts";
 import { useFetchUserPostsMutation } from "../../redux/api/postApiSlice";
@@ -31,10 +31,6 @@ function UsersProfilePage() {
   useEffect(() => {
     fetchUsersProfile();
   }, []);
-
-  // useEffect(() => {
-  //   fetchPost();
-  // }, [userProfile]);
 
   const UsersPosts = lazy(() => import("../organisms/UsersPosts"));
 
