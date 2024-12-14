@@ -12,6 +12,15 @@
   outline: none;
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 5rem;
+}
+
 html,
 body {
   height: 100%;
