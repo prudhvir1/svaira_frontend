@@ -1,0 +1,71 @@
+.MobileProfileCard {
+  width: 100%;
+}
+.MobileProfileCard-Container {
+  padding-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.MobileProfileCard-Details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.MobileProfileCard-Details-Name {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.MobileProfileCard-Details-Name p {
+  color: #fffa;
+  font-size: 0.8rem;
+}
+
+.MobileProfileCard-Details-Info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.MobileProfileCard-Details-Info-Block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MobileProfileCard-Details-Info-Block p:nth-child(1) {
+  font-size: 1.2rem;
+}
+
+.MobileProfileCard-Details-Info-Block p:nth-child(2) {
+  font-size: 0.6rem;
+}
+
+.MobileProfileCard-Options {
+  display: flex;
+
+  align-items: start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.MobileProfileCard-More button {
+  all: unset;
+  font-size: 1.5rem;
+}

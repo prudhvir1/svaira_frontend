@@ -12,3 +12,9 @@
   align-items: center;
   gap: 2rem;
 }
+
+@media screen and (max-width: 425px) {
+  .ProfilePosts {
+    width: unset;
+  }
+}
