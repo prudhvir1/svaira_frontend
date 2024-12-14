@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import "./styles/ProfileStat.css";
-function ProfileStat({ posts, followers, following }) {
+function ProfileStat({ posts, followers, following, style }) {
   return (
-    <div className="ProfileStat">
+    <div className="ProfileStat" style={style}>
       <div className="ProfileStat-Block">
         <p>{posts}</p> <p>Posts</p>
       </div>
