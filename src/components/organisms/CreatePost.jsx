@@ -7,6 +7,7 @@ import { createModal } from "../../redux/slices/modalSlice";
 import { useState } from "react";
 import { useAddPostMutation } from "../../redux/api/postApiSlice";
 import { AddOptionButton, ModalCloseButton } from "../atoms";
+import { eventEmitter } from "../utils/eventEmitter";
 
 function CreatePost() {
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ function CreatePost() {
 
         const response = await addPost(formData).unwrap();
         if (response.statusCode === 200) dispatch(createModal(false));
+        eventEmitter.emit("postAdded");
       }
     } catch (error) {
       console.log(error);
@@ -154,9 +156,10 @@ function CreatePost() {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  disabled={!isValidForm}
+                  disabled={!isValidForm || isLoading}
                 >
-                  Post
+                  {!isLoading ? "Post" : "Posting"}
+                  {isLoading && <span className="loader"></span>}
                 </button>
               </div>
             </div>

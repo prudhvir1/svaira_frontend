@@ -1,0 +1,64 @@
+.PostMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #131313;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.PostMenu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.PostMenu li {
+  width: 100%;
+  cursor: pointer;
+  padding: 1.2rem 7rem;
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.PostMenu li:hover {
+  background: #222;
+}
+
+.PostMenu li:first-child {
+  color: red;
+}
+.PostMenu li:last-child {
+  border-bottom: none;
+}
+
+/* SPINNER CSS */
+.loader {
+  position: absolute;
+  right: 2rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 2px solid red;
+  border-right: 2px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

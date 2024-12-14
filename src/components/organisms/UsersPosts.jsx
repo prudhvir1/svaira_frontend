@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./styles/UsersPosts.css";
 import { useEffect, useState } from "react";
 import PostCard from "../molecules/PostCard/PostCard";
@@ -22,7 +23,7 @@ function UsersPosts({ userId }) {
     <div className="UsersPosts">
       <div className="UsersPosts-Container">
         {isLoading && <p>Loading...</p>}
-        {isSuccess && posts.length === 0 && <p>No Posts to vote...</p>}
+        {isSuccess && posts.length === 0 && <p>No Posts Available...</p>}
         {isSuccess &&
           posts.map((post) => <PostCard key={post._id} post={post} />)}
         {isError && <p>Something went wrong!</p>}

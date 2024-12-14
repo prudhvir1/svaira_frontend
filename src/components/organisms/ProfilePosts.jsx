@@ -5,6 +5,7 @@ import { useFetchUserPostsMutation } from "../../redux/api/postApiSlice";
 import PostCard from "../molecules/PostCard/PostCard";
 import { useSelector } from "react-redux";
 import { getProfile } from "../../redux/slices/profileSlice";
+import { eventEmitter } from "../utils/eventEmitter";
 function ProfilePosts() {
   const [posts, setPosts] = useState([]);
   const [fetchUserPosts, { isLoading, isSuccess, isError }] =
@@ -15,11 +16,19 @@ function ProfilePosts() {
   const fetchPost = async () => {
     const res = await fetchUserPosts(profile?._id).unwrap();
     setPosts(res.data);
-    // console.log(res.data);
+    console.log(res.data);
   };
 
   useEffect(() => {
     fetchPost();
+
+    eventEmitter.on("postDeleted", fetchPost);
+    eventEmitter.on("postAdded", fetchPost);
+
+    return () => {
+      eventEmitter.off("postDeleted", fetchPost);
+      eventEmitter.off("postAdded", fetchPost);
+    };
   }, []);
 
   return (

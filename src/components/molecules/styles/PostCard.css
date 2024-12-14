@@ -1,5 +1,6 @@
 .PostCard {
-  width: min(25rem, 100%);
+  height: fit-content;
+  width: min(25rem, 100dvw);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -36,6 +37,9 @@
 
 .PostCard-Header {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .PostCard-Header-Main {
@@ -68,7 +72,9 @@
   opacity: 0.8;
 }
 
-.PostCard-Header-MenuIcon {
+.PostCard-Header-MenuIcon button {
+  all: unset;
+  cursor: pointer;
 }
 
 .PostCard-Content {

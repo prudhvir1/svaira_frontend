@@ -3,7 +3,6 @@ import "../styles/DashNav.css";
 import { useDispatch, useSelector } from "react-redux";
 import { createModal, searchModal } from "../../../redux/slices/modalSlice";
 import { getProfile } from "../../../redux/slices/profileSlice";
-// import { getProfile } from "../../../redux/slices/profileSlice";
 
 function DashNav() {
   const dispatch = useDispatch();

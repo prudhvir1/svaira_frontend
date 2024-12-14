@@ -10,7 +10,14 @@ export const userApiSlice = apiSlice.injectEndpoints({
         body: { userId },
       }),
     }),
+    unFollowUser: builder.mutation({
+      query: (userId) => ({
+        url: "/user/unfollow",
+        method: "PUT",
+        body: { userId },
+      }),
+    }),
   }),
 });
 
-export const { useFollowUserMutation } = userApiSlice;
+export const { useFollowUserMutation, useUnFollowUserMutation } = userApiSlice;

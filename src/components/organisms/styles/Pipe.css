@@ -5,6 +5,7 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
   z-index: 100;
+  padding: 2rem 0rem;
 }
 
 .Pipe::-webkit-scrollbar {

@@ -1,0 +1,11 @@
+.ProfileTitle {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.ProfileTitle p {
+  color: #fffa;
+  font-size: 0.8rem;
+}

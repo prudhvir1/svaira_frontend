@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useFetchPipePostsMutation } from "../../redux/api/postApiSlice";
 import { Link } from "react-router-dom";
 import PostCard from "../molecules/PostCard/PostCard";
+import { eventEmitter } from "../utils/eventEmitter";
 
 function Pipe() {
   const [posts, setPosts] = useState([]);
@@ -16,6 +17,7 @@ function Pipe() {
 
   useEffect(() => {
     fetchPost();
+    eventEmitter.on("postAdded", fetchPost);
   }, []);
 
   return (

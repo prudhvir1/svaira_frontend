@@ -8,6 +8,7 @@ const modalSlice = createSlice({
     isCreateModal: false,
     isNotificationsModal: false,
     isViewPostModal: false,
+    isPostMenuModal: false,
     data: null,
   },
   reducers: {
@@ -33,19 +34,34 @@ const modalSlice = createSlice({
       state.isViewPostModal = false;
     },
     viewPostModal: (state, action) => {
-      const { value, post } = action.payload;
+      const { value, postId } = action.payload;
       state.isModal = value;
       state.isViewPostModal = value;
-      state.data = post;
+      state.data = postId;
       state.isCreateModal = false;
       state.isSearchModal = false;
       state.isNotificationsModal = false;
     },
+    postMenuModal: (state, action) => {
+      const { value, postId } = action.payload;
+      state.isModal = value;
+      state.isViewPostModal = false;
+      state.data = postId;
+      state.isCreateModal = false;
+      state.isSearchModal = false;
+      state.isNotificationsModal = false;
+      state.isPostMenuModal = value;
+    },
   },
 });
 
-export const { searchModal, createModal, notificationsModal, viewPostModal } =
-  modalSlice.actions;
+export const {
+  searchModal,
+  createModal,
+  notificationsModal,
+  viewPostModal,
+  postMenuModal,
+} = modalSlice.actions;
 export default modalSlice.reducer;
 
 export const getPostData = (state) => state.modal;

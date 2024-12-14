@@ -50,7 +50,11 @@ function PostCard({ post: data }) {
       <PostBackground post={post} />
       <div className="PostCard-Container">
         <div className="PostCard-Header">
-          <PostCardHeader postedBy={post.postedBy} />
+          <PostCardHeader
+            postedBy={post.postedBy}
+            postId={post?._id}
+            isProfilePost={post.isProfilePost}
+          />
         </div>
         <div className="PostCard-Content">
           <PostCardContent

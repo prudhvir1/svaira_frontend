@@ -7,9 +7,8 @@
 
 .UsersPosts-Container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  justify-items: center;
   gap: 2rem;
 }
