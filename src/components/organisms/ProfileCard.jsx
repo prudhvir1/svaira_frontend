@@ -26,11 +26,11 @@ function ProfileCard() {
             fullname={profile?.fullname}
             username={profile?.username}
           />
-          {/* <ProfileStat
+          <ProfileStat
             posts={profile?.postsCount}
             followers={profile?.followersCount}
             following={profile?.followingCount}
-          /> */}
+          />
         </div>
       </div>
     </div>

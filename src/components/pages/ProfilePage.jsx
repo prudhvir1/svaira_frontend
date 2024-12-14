@@ -4,25 +4,52 @@ import ProfilePosts from "../organisms/ProfilePosts";
 import ProfileStat from "../atoms/ProfileStat";
 import { useSelector } from "react-redux";
 import { getProfile } from "../../redux/slices/profileSlice";
+import MobileProfileCard from "../organisms/MobileProfileCard";
 
 function ProfilePage() {
   const { profile } = useSelector(getProfile);
+  const { isMobile } = useSelector((state) => state.util);
+
   return (
     <main className="ProfilePage">
-      <ProfileCard />
-      <ProfileStat
-        style={{
-          position: "sticky",
-          top: "0px",
-          zIndex: "1000",
-          paddingBottom: "1rem",
-          background: "#111",
-          width: "100%",
-        }}
-        posts={profile?.postsCount}
-        followers={profile?.followersCount}
-        following={profile?.followingCount}
-      />
+      {isMobile ? (
+        <>
+          <h3
+            style={{
+              position: "sticky",
+              top: "-1px",
+              zIndex: "1000",
+              background: "#111",
+              width: "100%",
+              textAlign: "center",
+              paddingTop: "1.5rem",
+              paddingBottom: "1.5rem",
+              color: "#aaa",
+            }}
+          >
+            /{profile?.username}
+          </h3>
+          <MobileProfileCard />
+          <ProfileStat
+            style={{
+              borderTop: "1px solid #888",
+              position: "sticky",
+              top: "4rem",
+              zIndex: "1000",
+              paddingTop: ".5rem",
+              paddingBottom: "1rem",
+              background: "#111",
+              width: "100%",
+              justifyContent: "space-evenly",
+            }}
+            posts={profile?.postsCount}
+            followers={profile?.followersCount}
+            following={profile?.followingCount}
+          />
+        </>
+      ) : (
+        <ProfileCard />
+      )}
       <ProfilePosts />
     </main>
   );

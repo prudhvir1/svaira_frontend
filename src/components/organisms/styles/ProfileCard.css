@@ -1,3 +1,11 @@
+.ProfileCard {
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  background: #111;
+}
+
 .ProfileCard-Container {
   padding-top: 1rem;
   padding: 1rem;

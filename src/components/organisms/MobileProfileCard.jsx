@@ -27,11 +27,6 @@ function MobileProfileCard() {
             username={profile?.username}
           />
         </div>
-        <ProfileStat
-          posts={profile?.postsCount}
-          followers={profile?.followersCount}
-          following={profile?.followingCount}
-        />
       </div>
     </div>
   );
