@@ -24,7 +24,6 @@ function ProfilePage() {
               textAlign: "center",
               paddingTop: "1rem",
               paddingBottom: "1rem",
-              color: "#aaa",
             }}
           >
             /{profile?.username}

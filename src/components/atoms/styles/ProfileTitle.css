@@ -1,6 +1,8 @@
 .ProfileTitle {
+  /* height: 100%; */
   overflow: hidden;
   display: block;
+  max-width: 15rem;
 }
 .ProfileTitle-Container {
   display: flex;

@@ -22,8 +22,18 @@ function MobileProfileCard() {
       <div className="MobileProfileCard-Container">
         <div className="MobileProfileCard-Details">
           <ProfileAvatar avatar={profile?.avatar} />
+          {/* <div className="MobileProfileCard-Info"> */}
           <ProfileTitle fullname={profile?.fullname} />
+          {/* <h2>{profile?.fullname}</h2> */}
+          <button className="settings-btn">
+            <EditICon />
+          </button>
+          <button className="settings-btn">
+            <Settings />
+          </button>
+          {/* </div> */}
         </div>
+        <div className="ProfileCard-Options"></div>
       </div>
     </div>
   );
