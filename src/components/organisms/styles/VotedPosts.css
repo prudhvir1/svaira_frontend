@@ -8,9 +8,8 @@
 }
 .VotedPosts-Container {
   display: flex;
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
+  align-items: start;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
 }

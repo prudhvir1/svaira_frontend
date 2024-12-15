@@ -2,7 +2,6 @@ import "./styles/VotedPosts.css";
 import { useEffect, useState } from "react";
 import PostCard from "../molecules/PostCard/PostCard";
 import { useFetchVotedPostsMutation } from "../../redux/api/postApiSlice";
-import { Link } from "react-router-dom";
 
 function VotedPosts() {
   const [posts, setPosts] = useState([]);
