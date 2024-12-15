@@ -14,7 +14,7 @@ function ProfilePage() {
     <main className="ProfilePage">
       {isMobile ? (
         <>
-          <h3
+          <h4
             style={{
               position: "sticky",
               top: "-1px",
@@ -22,19 +22,19 @@ function ProfilePage() {
               background: "#111",
               width: "100%",
               textAlign: "center",
-              paddingTop: "1.5rem",
-              paddingBottom: "1.5rem",
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
               color: "#aaa",
             }}
           >
             /{profile?.username}
-          </h3>
+          </h4>
           <MobileProfileCard />
           <ProfileStat
             style={{
               borderTop: "1px solid #888",
               position: "sticky",
-              top: "4rem",
+              top: "3rem",
               zIndex: "1000",
               paddingTop: ".5rem",
               paddingBottom: "1rem",

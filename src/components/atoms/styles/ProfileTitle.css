@@ -1,11 +1,22 @@
 .ProfileTitle {
+  overflow: hidden;
+  display: block;
+}
+.ProfileTitle-Container {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: center;
+  gap: 1rem;
 }
 
-.ProfileTitle p {
-  color: #fffa;
+.ProfileTitle-Container h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ProfileTitle-Container p {
   font-size: 0.8rem;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

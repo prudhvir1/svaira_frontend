@@ -24,26 +24,9 @@ function VotedPosts() {
         {isSuccess &&
           posts.map((post) => <PostCard key={post._id} post={post} />)}
         {isError && <p>Something went wrong!</p>}
-        <PipeFooter />
       </div>
     </div>
   );
 }
 
-function PipeFooter() {
-  return (
-    <div className="Pipe-Footer">
-      <div className="Pipe-Footer-Links">
-        <Link>Svaira</Link>
-        <Link>About</Link>
-        <Link>Blog</Link>
-        <Link>Help</Link>
-        <Link>Privacy</Link>
-        <Link>Terms</Link>
-        <Link>Contact</Link>
-      </div>
-      <p>&copy; SVAIRA 2024</p>
-    </div>
-  );
-}
 export default VotedPosts;

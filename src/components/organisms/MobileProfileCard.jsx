@@ -22,10 +22,7 @@ function MobileProfileCard() {
       <div className="MobileProfileCard-Container">
         <div className="MobileProfileCard-Details">
           <ProfileAvatar avatar={profile?.avatar} />
-          <ProfileTitle
-            fullname={profile?.fullname}
-            username={profile?.username}
-          />
+          <ProfileTitle fullname={profile?.fullname} />
         </div>
       </div>
     </div>

@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 import "./styles/ProfileTitle.css";
 
-function ProfileTitle({ fullname, username }) {
+function ProfileTitle({ fullname, bio }) {
   return (
     <div className="ProfileTitle">
-      <h2>{fullname}</h2>
-      <p>/{username}</p>
+      <div className="ProfileTitle-Container">
+        <h3>{fullname}</h3>
+        <p>{bio}</p>
+      </div>
     </div>
   );
 }

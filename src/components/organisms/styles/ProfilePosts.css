@@ -11,10 +11,17 @@
   justify-items: center;
   align-items: center;
   gap: 2rem;
+  padding: 3rem 0rem;
 }
 
 @media screen and (max-width: 425px) {
   .ProfilePosts {
     width: unset;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ProfilePosts-Container {
+    padding: 1rem 0rem 5rem;
   }
 }

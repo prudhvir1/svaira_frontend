@@ -3,6 +3,7 @@
   width: 5rem;
   border-radius: 1rem;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .ProfileAvatar img {
