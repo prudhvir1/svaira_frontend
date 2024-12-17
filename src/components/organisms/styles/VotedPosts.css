@@ -7,9 +7,11 @@
   scroll-behavior: smooth;
 }
 .VotedPosts-Container {
-  display: flex;
-  align-items: start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  justify-items: center;
+  align-items: center;
   gap: 2rem;
+  padding: 3rem 0rem;
 }

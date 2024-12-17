@@ -18,7 +18,7 @@ function ProfilePage() {
             style={{
               position: "sticky",
               top: "-1px",
-              zIndex: "1000",
+              zIndex: "100",
               background: "#111",
               width: "100%",
               textAlign: "center",

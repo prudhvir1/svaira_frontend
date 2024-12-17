@@ -12,7 +12,6 @@ function UsersPosts({ userId }) {
   const fetchPost = async () => {
     const res = await fetchUserPosts(userId).unwrap();
     setPosts(res.data);
-    console.log(res.data);
   };
 
   useEffect(() => {

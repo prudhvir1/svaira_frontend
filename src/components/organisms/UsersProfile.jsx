@@ -1,22 +1,42 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import {
   useFollowUserMutation,
   useUnFollowUserMutation,
 } from "../../redux/api/userApiSlice";
 import ProfileAvatar from "../atoms/ProfileAvatar";
+import ProfileStat from "../atoms/ProfileStat";
 import ProfileTitle from "../atoms/ProfileTitle";
+import { eventEmitter } from "../utils/eventEmitter";
 import "./styles/UsersProfile.css";
 
-function UsersProfile({ userProfile: profile }) {
-  const [followUser, { isError, isSuccess, isLoading }] =
-    useFollowUserMutation();
-  const [unFollowUser] = useUnFollowUserMutation();
+function UsersProfile({ userProfile }) {
+  const [profile, setProfile] = useState(userProfile);
+  const [followUser, { isLoading }] = useFollowUserMutation();
+  const [unFollowUser, { isLoading: isUnfollowLoading }] =
+    useUnFollowUserMutation();
 
+  console.log(isLoading, isUnfollowLoading);
   const handleFollowUser = async () => {
     const res = profile.isFollowing
       ? await unFollowUser(profile._id).unwrap()
       : await followUser(profile._id).unwrap();
-    console.log(res.data);
+
+    console.log(Boolean(res?.data?.profile));
+
+    if (res?.success && Boolean(res?.data?.profile)) {
+      setProfile((prev) => ({
+        ...prev,
+        followersCount: prev.followersCount + 1,
+        isFollowing: !prev.isFollowing,
+      }));
+    } else {
+      setProfile((prev) => ({
+        ...prev,
+        followersCount: prev.followersCount - 1,
+        isFollowing: !prev.isFollowing,
+      }));
+    }
   };
 
   return (
@@ -27,33 +47,30 @@ function UsersProfile({ userProfile: profile }) {
             <ProfileAvatar avatar={profile?.avatar} />
             <div className="UsersProfile-Info">
               <div className="UsersProfile-About">
-                <ProfileTitle
-                  fullname={profile?.fullname}
-                  username={profile?.username}
+                <ProfileTitle fullname={profile?.fullname} bio={profile?.bio} />
+                <ProfileStat
+                  posts={profile?.postsCount}
+                  followers={profile?.followersCount}
+                  following={profile?.followingCount}
                 />
                 <div className="UsersProfile-Follow">
                   <div
                     className="UsersProfile-FollowBtn"
                     onClick={handleFollowUser}
                   >
-                    {profile.isFollowing ? (
-                      <button className="UsersProfile-FollowBtn-Following">
-                        Following
-                      </button>
-                    ) : (
-                      <button className="UsersProfile-FollowBtn-Follow">
-                        Follow
-                      </button>
-                    )}
+                    <button
+                      className={`UsersProfile-FollowBtn-${
+                        profile?.isFollowing ? "Following" : "Follow"
+                      }`}
+                      disabled={isLoading || isUnfollowLoading}
+                    >
+                      {(isLoading || isUnfollowLoading) && (
+                        <span className="loader"></span>
+                      )}
+                      {profile?.isFollowing ? "Following" : "Follow"}
+                    </button>
                   </div>
                 </div>
-              </div>
-              <div className="UserProfile-Desc">
-                {profile?.bio ? (
-                  <p className="UserProfile-Desc-Main">{profile.bio}</p>
-                ) : (
-                  <p className="UserProfile-Desc-Default">Bio</p>
-                )}
               </div>
             </div>
           </div>
