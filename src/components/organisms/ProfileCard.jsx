@@ -1,15 +1,18 @@
 import "./styles/ProfileCard.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getProfile } from "../../redux/slices/profileSlice";
 import ProfileAvatar from "../atoms/ProfileAvatar";
 import ProfileTitle from "../atoms/ProfileTitle";
 import ProfileStat from "../atoms/ProfileStat";
 import { useEffect, useState } from "react";
 import { eventEmitter } from "../utils/eventEmitter";
+import { profileEditModal } from "../../redux/slices/modalSlice";
 
 function ProfileCard() {
   const { profile: data } = useSelector(getProfile);
   const [profile, setProfile] = useState(data);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     eventEmitter.on("postDeleted", () => setProfile(data));
@@ -33,7 +36,12 @@ function ProfileCard() {
         </div>
         <div className="ProfileCard-Right">
           <div className="ProfileCard-Options">
-            <button className="edit-btn">Edit profile</button>
+            <button
+              className="edit-btn"
+              onClick={() => dispatch(profileEditModal({ value: true, data }))}
+            >
+              Edit profile
+            </button>
             <button className="settings-btn">
               <Settings />
             </button>

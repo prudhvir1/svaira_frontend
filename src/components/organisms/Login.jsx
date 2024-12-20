@@ -35,7 +35,7 @@ function Login() {
       console.log(error.data);
     }
   };
-  const handleForgotPassword = () => {};
+  // const handleForgotPassword = () => {};
 
   return (
     <div className="Login">
