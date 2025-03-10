@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-// import PulseLoader from "react-spinners/PulseLoader";
 import { usePersist } from "../../hooks";
 import { selectCurrentToken } from "../../redux/slices/authSlice";
 import { useRefreshMutation } from "../../redux/api/authApiSlice";
+import Loader from "./Loader";
 
 const PersistLogin = () => {
   const [persist] = usePersist();
@@ -47,15 +47,10 @@ const PersistLogin = () => {
   } else if (isLoading) {
     //persist: yes, token: no
     console.log("loading");
-    content = <p>Loading...</p>;
+    content = <Loader />;
   } else if (isError) {
     //persist: yes, token: no
     console.log("error");
-    // content = (
-    //   <p className="errmsg">
-    //     {`${error?.data?.message}`}
-    //   </p>
-    // );
     content = <Outlet />;
   } else if (isSuccess && trueSuccess) {
     //persist: yes, token: yes

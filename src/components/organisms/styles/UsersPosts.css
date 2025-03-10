@@ -4,13 +4,11 @@
 }
 
 .UsersPosts-Container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  justify-items: center;
+  display: flex;
   align-items: flex-start;
-  gap: 2rem;
+  justify-content: center;
   padding: 3rem 0rem;
+  width: auto;
 }
 
 @media screen and (max-width: 425px) {

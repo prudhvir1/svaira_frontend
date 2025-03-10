@@ -23,9 +23,6 @@ function HomePage() {
           </div>
         )}
       </main>
-      {/* <Routes>
-        <Route path="post/:post" element={<ViewPost />} />
-      </Routes> */}
     </>
   );
 }

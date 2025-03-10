@@ -1,29 +1,29 @@
 import "./styles/VotedPosts.css";
-import { useEffect, useState } from "react";
 import PostCard from "../molecules/PostCard/PostCard";
 import { useFetchVotedPostsMutation } from "../../redux/api/postApiSlice";
+import { setVotedPosts } from "../../redux/slices/postSlice";
+import MasonryLayout from "../utils/MasonryLayout";
+import Loader from "../utils/Loader";
+import { usePaginatedPosts } from "../../hooks/usePaginatedPosts";
 
 function VotedPosts() {
-  const [posts, setPosts] = useState([]);
-  const [fetchVotedPosts, { isError, isLoading, isSuccess }] =
-    useFetchVotedPostsMutation();
+  const { data, isError, isSuccess, inViewRef, loadMore } = usePaginatedPosts(
+    useFetchVotedPostsMutation,
+    {},
+    setVotedPosts,
+    (state) => state.post.voted
+  );
 
-  const fetchPosts = async () => {
-    const res = await fetchVotedPosts().unwrap();
-    setPosts(res.data);
-  };
-
-  useEffect(() => {
-    fetchPosts();
-  }, []);
   return (
     <div className="VotedPosts">
-      <div className="VotedPosts-Container">
-        {isLoading && <p>Loading...</p>}
-        {isSuccess &&
-          posts.map((post) => <PostCard key={post._id} post={post} />)}
+      <MasonryLayout>
+        {isSuccess && data.length === 0 && <p>No Posts Available...</p>}
+        {data.map((post) => (
+          <PostCard key={post._id} post={post} />
+        ))}
         {isError && <p>Something went wrong!</p>}
-      </div>
+      </MasonryLayout>
+      {loadMore && !isError && <Loader ref={inViewRef} />}
     </div>
   );
 }

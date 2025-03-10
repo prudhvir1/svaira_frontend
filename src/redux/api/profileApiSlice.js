@@ -32,8 +32,26 @@ export const profileApiSlice = apiSlice.injectEndpoints({
         }
       },
     }),
+    updateProfile: builder.mutation({
+      query: (data) => ({
+        url: "/user/profile",
+        method: "PUT",
+        body: { ...data },
+      }),
+    }),
+    updateProfileAvatar: builder.mutation({
+      query: (data) => ({
+        url: "/user/profile_avatar",
+        method: "PUT",
+        body: data,
+      }),
+    }),
   }),
 });
 
-export const { useGetProfileQuery, useGetUsersProfileMutation } =
-  profileApiSlice;
+export const {
+  useGetProfileQuery,
+  useGetUsersProfileMutation,
+  useUpdateProfileMutation,
+  useUpdateProfileAvatarMutation,
+} = profileApiSlice;

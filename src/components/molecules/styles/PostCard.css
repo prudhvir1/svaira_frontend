@@ -33,6 +33,7 @@
   background: rgba(45, 45, 45, 0.3);
   gap: 1rem;
   backdrop-filter: blur(5rem);
+  transition: transform 0.2s ease-in-out;
 }
 
 .PostCard-Header {

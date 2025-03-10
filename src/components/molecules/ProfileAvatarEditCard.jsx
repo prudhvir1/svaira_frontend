@@ -1,17 +1,31 @@
 /* eslint-disable react/prop-types */
 import { useRef, useState } from "react";
 import "./styles/ProfileAvatarEditCard.css";
+import { useUpdateProfileAvatarMutation } from "../../redux/api/profileApiSlice";
 
 function ProfileAvatarEditCard({ avatar }) {
   const imageRef = useRef(null);
+
+  const [updateProfileAvatar, { isLoading }] = useUpdateProfileAvatarMutation();
 
   const [file, setFile] = useState(null);
   const [filePreview, setFilePreview] = useState(avatar);
 
   const handleFileInput = () => {
     const image = imageRef.current.files[0];
+    const imageURL = URL.createObjectURL(image);
     setFile(image);
-    setFilePreview(URL.createObjectURL(image));
+    setFilePreview(imageURL);
+    if (file) console.log("File Exists");
+    updateAvatar(image);
+  };
+
+  const updateAvatar = async (url) => {
+    const formData = new FormData();
+    formData.append("avatar", url);
+    const res = await updateProfileAvatar(formData).unwrap();
+
+    console.log(res);
   };
 
   return (
@@ -24,7 +38,7 @@ function ProfileAvatarEditCard({ avatar }) {
               onClick={() => {
                 setFilePreview(null);
                 setFile(null);
-                file.image = null;
+                // file.image = null;
               }}
             >
               <svg
@@ -46,7 +60,7 @@ function ProfileAvatarEditCard({ avatar }) {
         <div className="PostImage">
           <input
             type="file"
-            name="post"
+            name="avatar"
             ref={imageRef}
             id="post"
             accept="image/png, image/jpg, image/jpeg"

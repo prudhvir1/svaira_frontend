@@ -1,33 +1,53 @@
 import { useDispatch, useSelector } from "react-redux";
 import ProfileAvatarEditCard from "../molecules/ProfileAvatarEditCard";
 import "./styles/ProfileEdit.css";
-import { getPostData, profileEditModal } from "../../redux/slices/modalSlice";
+import { getModalData, profileEditModal } from "../../redux/slices/modalSlice";
 import { useState } from "react";
+import { useUpdateProfileMutation } from "../../redux/api/profileApiSlice";
+import { eventEmitter } from "../utils/eventEmitter";
 
 function ProfileEdit() {
-  const { data } = useSelector(getPostData);
+  const { data } = useSelector(getModalData);
   const [profile, setProfile] = useState(data);
   const dispatch = useDispatch();
+
+  const [updateProfile, { isLoading }] = useUpdateProfileMutation();
 
   const handleNameChange = (e) => {
     const fullname = e.target.value;
     if (fullname.length <= 150) setProfile((prev) => ({ ...prev, fullname }));
   };
+
   const handleBioChange = (e) => {
     const bio = e.target.value;
     if (bio.length <= 150) setProfile((prev) => ({ ...prev, bio }));
   };
+
   const handleDateOfBirthChange = (e) => {
     setProfile((prev) => ({
       ...prev,
       dateOfBirth: e.target.value,
     }));
   };
+
   const handleGenderChange = (e) => {
     setProfile((prev) => ({ ...prev, gender: e.target.value }));
   };
 
-  const handleUpdateProfile = () => {};
+  const handleUpdateProfile = async () => {
+    const { fullname, bio, gender, dateOfBirth } = profile;
+    const updatedProfile = { fullname, bio, gender, dateOfBirth };
+
+    try {
+      const res = await updateProfile(updatedProfile).unwrap();
+      if (res.success) {
+        eventEmitter.emit("updateProfile");
+        dispatch(profileEditModal({ value: false }));
+      }
+    } catch (error) {
+      console.log(error?.data?.message);
+    }
+  };
 
   return (
     <div className="ProfileEdit">
@@ -109,7 +129,13 @@ function ProfileEdit() {
           >
             Cancel
           </button>
-          <button className="update">Update</button>
+          <button
+            className="update"
+            onClick={handleUpdateProfile}
+            disabled={isLoading}
+          >
+            Update
+          </button>
         </div>
       </div>
     </div>

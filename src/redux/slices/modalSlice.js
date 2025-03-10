@@ -91,4 +91,4 @@ export const {
 } = modalSlice.actions;
 export default modalSlice.reducer;
 
-export const getPostData = (state) => state.modal;
+export const getModalData = (state) => state.modal;

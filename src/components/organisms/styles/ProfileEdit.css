@@ -1,4 +1,7 @@
 .ProfileEdit {
+  position: absolute;
+  top: 20%;
+  left: 0;
   max-height: 90dvh;
   background: #333;
   padding: 2rem;

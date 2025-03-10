@@ -4,13 +4,17 @@
 }
 
 .ProfilePosts-Container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  justify-items: center;
-  align-items: center;
-  gap: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   padding: 3rem 0rem;
+  width: auto;
+}
+
+.masonry-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (max-width: 425px) {

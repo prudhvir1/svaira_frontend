@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getPostData, postMenuModal } from "../../redux/slices/modalSlice";
+import { getModalData, postMenuModal } from "../../redux/slices/modalSlice";
 import "./styles/PostMenu.css";
 import { useRemovePostMutation } from "../../redux/api/postApiSlice";
 import { eventEmitter } from "../utils/eventEmitter";
@@ -7,13 +7,12 @@ import { eventEmitter } from "../utils/eventEmitter";
 function PostMenu() {
   const dispatch = useDispatch();
   const [removePost, { isLoading }] = useRemovePostMutation();
-  const { data } = useSelector(getPostData);
+  const { data } = useSelector(getModalData);
 
   const handlePostDelete = async () => {
     const res = await removePost(data).unwrap();
     if (res.success) dispatch(postMenuModal(false));
     eventEmitter.emit("postDeleted");
-    console.log(res);
   };
 
   return (

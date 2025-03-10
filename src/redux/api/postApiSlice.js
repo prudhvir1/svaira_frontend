@@ -11,21 +11,22 @@ export const postApiSlice = apiSlice.injectEndpoints({
       }),
     }),
     fetchPipePosts: builder.mutation({
-      query: () => ({
-        url: "/post",
+      query: (page) => ({
+        url: `/post?page=${page}`,
         method: "GET",
       }),
+      keepUnusedDataFor: 600,
     }),
 
     fetchVotedPosts: builder.mutation({
-      query: () => ({
-        url: "/post/voted",
+      query: (page) => ({
+        url: `/post/voted?page=${page}`,
         method: "GET",
       }),
     }),
     fetchUserPosts: builder.mutation({
-      query: (userId) => ({
-        url: `/post/u/${userId}`,
+      query: ({ userId, page }) => ({
+        url: `/post/u/${userId}?page=${page}`,
         method: "GET",
       }),
     }),
