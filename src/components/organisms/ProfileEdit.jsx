@@ -30,8 +30,8 @@ function ProfileEdit() {
     }));
   };
 
-  const handleGenderChange = (e) => {
-    setProfile((prev) => ({ ...prev, gender: e.target.value }));
+  const handleGenderChange = (gender) => {
+    setProfile((prev) => ({ ...prev, gender }));
   };
 
   const handleUpdateProfile = async () => {
@@ -88,38 +88,20 @@ function ProfileEdit() {
         <div className="ProfileEdit-Gender">
           <h5>Gender</h5>
           <div className="ProfileEdit-Gender-Options">
-            <label>
-              <input
-                type="radio"
-                name="gender"
-                value="Male"
-                checked={profile.gender === "Male"}
-                onChange={handleGenderChange}
-              />
-              Male
-            </label>
-
-            <label>
-              <input
-                type="radio"
-                name="gender"
-                value="Female"
-                checked={profile.gender === "Female"}
-                onChange={handleGenderChange}
-              />
-              Female
-            </label>
-
-            <label>
-              <input
-                type="radio"
-                name="gender"
-                value="Other"
-                checked={profile.gender === "Other"}
-                onChange={handleGenderChange}
-              />
-              Other
-            </label>
+            <div className="Gender-Container">
+              {["Male", "Female", "Other"].map((gender) => (
+                <button
+                  key={gender}
+                  className="Gender-Label"
+                  style={{
+                    background: profile.gender === gender ? "#101010" : "",
+                  }}
+                  onClick={() => handleGenderChange(gender)}
+                >
+                  {gender}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         <div className="ProfileEdit-Buttons">

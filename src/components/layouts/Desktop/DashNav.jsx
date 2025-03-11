@@ -58,7 +58,7 @@ function DashNav() {
           </li>
           <li
             style={{
-              background: location.pathname === "/Activity" ? "#111" : "",
+              background: location.pathname === "/activity" ? "#111" : "",
             }}
           >
             <Link to="Activity">

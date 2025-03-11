@@ -17,8 +17,8 @@ function App() {
         <Route path="/" element={<Layout />}>
           {/* Public Routes */}
           <Route element={<LoginPage />}>
-            <Route index path="Login" element={<Login />} />
-            <Route path="Register" element={<Register />} />
+            <Route index path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
           </Route>
 
           {/* Private Routes */}
@@ -28,9 +28,9 @@ function App() {
                 {/* Main Start */}
                 <Route element={<DashLayout />}>
                   <Route path="" element={<HomePage />} />
-                  <Route path="Activity" element={<ActivityPage />} />
+                  <Route path="activity" element={<ActivityPage />} />
                   <Route path=":username" element={<ProfileRoute />} />
-                  <Route path="Settings" element={<SettingsPage />} />
+                  <Route path="settings" element={<SettingsPage />} />
                 </Route>
                 {/* Main End */}
                 {<Route path="/post/:post" element={<ViewPost />} />}

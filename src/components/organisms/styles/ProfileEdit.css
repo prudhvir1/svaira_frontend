@@ -1,7 +1,4 @@
 .ProfileEdit {
-  position: absolute;
-  top: 20%;
-  left: 0;
   max-height: 90dvh;
   background: #333;
   padding: 2rem;
@@ -32,35 +29,38 @@ h5 {
 }
 
 .ProfileEdit-Name {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  border-bottom: 2px solid #777;
 }
 
 .ProfileEdit-Name input {
   all: unset;
-  padding: 0.5rem 0.2rem 0.2rem;
+  width: 100%;
+  border: 1px solid #777;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
 }
 .ProfileEdit-Bio {
   display: block;
-  width: 100%;
+  width: 90%;
 }
 .ProfileEdit-Bio textarea {
   all: unset;
-  border-bottom: 2px solid #777;
   width: 100%;
   min-height: 3rem;
   font-size: 0.8rem;
   resize: none;
-  border: none;
   white-space: pre-wrap;
   word-wrap: break-word;
   background: transparent;
-  padding: 0.5rem 0.2rem 0.2rem;
-  border-bottom: 2px solid #777;
+  border: 1px solid #777;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
 }
 .ProfileEdit-DateOfBirth {
   display: flex;
@@ -71,6 +71,10 @@ h5 {
 .ProfileEdit-DateOfBirth input {
   all: unset;
   padding: 0.5rem;
+  border: 1px solid #777;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
 }
 
 .ProfileEdit-Gender {
@@ -88,7 +92,21 @@ h5 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 2rem;
+}
+.Gender-Container {
+  display: flex;
+  border: 1px solid #777;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.Gender-Label {
+  all: unset;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+}
+.Gender-Label:nth-child(2) {
+  border-left: 1px solid #777;
+  border-right: 1px solid #777;
 }
 
 .ProfileEdit-Gender-Options label {

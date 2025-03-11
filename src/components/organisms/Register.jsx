@@ -14,18 +14,16 @@ function Register() {
   const fullnameRef = useRef();
   const usernameRef = useRef();
   const emailRef = useRef();
-  const phoneRef = useRef();
   const passwordRef = useRef();
 
   const [fullname, setFullname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
 
-  const [signup, { isSuccess, isLoading, isError }] = useSignupMutation();
+  const [signup, { isLoading }] = useSignupMutation();
 
   useEffect(() => {
     fullnameRef.current.focus();
@@ -40,9 +38,6 @@ function Register() {
   const handleEmail = () => {
     setEmail(emailRef.current.value);
   };
-  const handlePhone = () => {
-    setPhone(phoneRef.current.value);
-  };
   const handlePassword = () => {
     setPassword(passwordRef.current.value);
   };
@@ -54,11 +49,10 @@ function Register() {
         fullname,
         username,
         email,
-        phone,
         password,
       }).unwrap();
       dispatch(setCredentials({ ...res.data }));
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.log(error.data);
     }
@@ -177,7 +171,7 @@ function Register() {
 
       <div className="LoginBtn">
         <p>
-          Account Exist? <Link to="/Login">Login</Link>
+          Account Exist? <Link to="/login">Login</Link>
         </p>
       </div>
     </div>

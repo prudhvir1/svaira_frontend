@@ -9,7 +9,7 @@ function AuthRoutes() {
   return token ? (
     <Outlet />
   ) : (
-    <Navigate to="/Login" state={{ from: location }} replace />
+    <Navigate to="/login" state={{ from: location }} replace />
   );
 }
 export default AuthRoutes;

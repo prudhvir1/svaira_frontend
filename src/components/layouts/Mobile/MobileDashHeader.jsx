@@ -10,7 +10,7 @@ function MobileDashHeader() {
   const [logout, { isLoading }] = useLogoutMutation();
 
   useEffect(() => {
-    if (isLoading) navigate("/Login");
+    if (isLoading) navigate("/login");
   }, [isLoading, navigate]);
 
   return (
