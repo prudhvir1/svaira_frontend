@@ -38,7 +38,7 @@ const PersistLogin = () => {
   } else if (isLoading) {
     //persist: yes, token: no
     console.log("loading");
-    localStorage.setItem("isLoggedIn", false);
+    // localStorage.setItem("isLoggedIn", false);
     content = <Loader />;
   } else if (isError) {
     //persist: yes, token: no

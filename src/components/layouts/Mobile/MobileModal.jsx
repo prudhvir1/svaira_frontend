@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import "../styles/MobileModal.css";
 import { MobileCreatePost, MobileSearch, Notifications } from "../../organisms";
 import PostMenu from "../../organisms/PostMenu";
-import ProfileEdit from "../../organisms/ProfileEdit";
+import MobileProfileEdit from "../../organisms/MobileProfileEdit";
 
 function MobileModal() {
   const {
@@ -19,7 +19,7 @@ function MobileModal() {
       {isCreateModal && <MobileCreatePost />}
       {isNotificationsModal && <Notifications />}
       {isPostMenuModal && <PostMenu />}
-      {isProfileEditModal && <ProfileEdit />}
+      {isProfileEditModal && <MobileProfileEdit />}
     </div>
   );
 }
