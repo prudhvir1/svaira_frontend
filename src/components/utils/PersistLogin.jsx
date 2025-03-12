@@ -43,7 +43,7 @@ const PersistLogin = () => {
   } else if (isError) {
     //persist: yes, token: no
     console.log("error");
-    localStorage.setItem("isLoggedIn", false);
+    // localStorage.setItem("isLoggedIn", false);
     content = <Outlet />;
   } else if (isSuccess && trueSuccess) {
     //persist: yes, token: yes
