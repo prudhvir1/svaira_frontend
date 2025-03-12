@@ -1,7 +1,6 @@
 .MobileDashNav {
   position: fixed;
   height: 7%;
-  /* width: 55%; */
   bottom: 1rem;
   left: auto;
   z-index: 500;
@@ -30,7 +29,7 @@
   list-style-type: none;
   font-size: 1.5rem;
   background: #1c1c1c;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
 }
 
 .MobileDashNavContainer a {

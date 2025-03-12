@@ -1,15 +1,14 @@
 import { Outlet } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-// import PulseLoader from "react-spinners/PulseLoader";
 import { usePersist } from "../../hooks";
 import { selectCurrentToken } from "../../redux/slices/authSlice";
 import { useRefreshMutation } from "../../redux/api/authApiSlice";
+import Loader from "./Loader";
 
 const PersistLogin = () => {
   const [persist] = usePersist();
   const token = useSelector(selectCurrentToken);
-  const effectRan = useRef(false);
 
   const [trueSuccess, setTrueSuccess] = useState(false);
 
@@ -17,24 +16,16 @@ const PersistLogin = () => {
     useRefreshMutation();
 
   useEffect(() => {
-    if (effectRan.current === true) {
-      // React 18 Strict Mode
+    const verifyRefreshToken = async () => {
+      try {
+        await refresh();
+        setTrueSuccess(true);
+      } catch (err) {
+        console.error(err);
+      }
+    };
 
-      const verifyRefreshToken = async () => {
-        try {
-          //const response =
-          await refresh();
-          //const { accessToken } = response.data
-          setTrueSuccess(true);
-        } catch (err) {
-          console.error(err);
-        }
-      };
-
-      if (!token && persist) verifyRefreshToken();
-    }
-
-    return () => (effectRan.current = true);
+    if (!token && persist) verifyRefreshToken();
 
     // eslint-disable-next-line
   }, []);
@@ -47,24 +38,23 @@ const PersistLogin = () => {
   } else if (isLoading) {
     //persist: yes, token: no
     console.log("loading");
-    content = <p>Loading...</p>;
+    // localStorage.setItem("isLoggedIn", false);
+    content = <Loader />;
   } else if (isError) {
     //persist: yes, token: no
     console.log("error");
-    // content = (
-    //   <p className="errmsg">
-    //     {`${error?.data?.message}`}
-    //   </p>
-    // );
+    localStorage.setItem("isLoggedIn", false);
     content = <Outlet />;
   } else if (isSuccess && trueSuccess) {
     //persist: yes, token: yes
     console.log("success");
+    localStorage.setItem("isLoggedIn", true);
     content = <Outlet />;
   } else if (token && isUninitialized) {
     //persist: yes, token: yes
     console.log("token and uninit");
     console.log(isUninitialized);
+    localStorage.setItem("isLoggedIn", true);
     content = <Outlet />;
   }
 

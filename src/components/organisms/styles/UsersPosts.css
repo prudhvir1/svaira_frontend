@@ -1,15 +1,24 @@
 .UsersPosts {
   width: 100%;
   height: 100%;
-  overflow-y: auto;
-  padding-bottom: 5rem;
 }
 
 .UsersPosts-Container {
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
   justify-content: center;
-  gap: 2rem;
+  padding: 3rem 0rem;
+  width: auto;
+}
+
+@media screen and (max-width: 425px) {
+  .UsersPosts {
+    width: unset;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .UsersPosts-Container {
+    padding: 1rem 0rem 5rem;
+  }
 }

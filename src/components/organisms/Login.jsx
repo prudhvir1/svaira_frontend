@@ -16,26 +16,33 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState({ isError: false, message: "" });
   // const profile = useSelector(selectCurrentProfile);
 
   useEffect(() => {
     usernameRef.current.focus();
   }, []);
 
-  const handleUsernameChange = () => setUsername(usernameRef.current.value);
-  const handlePasswordChange = () => setPassword(passwordRef.current.value);
+  const handleUsernameChange = () => {
+    let username = usernameRef.current.value.slice(0, 30);
+    setUsername(username);
+  };
+  const handlePasswordChange = () => {
+    const password = passwordRef.current.value.slice(0, 50);
+    setPassword(password);
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // console.log();
       const res = await login({ username, password }).unwrap();
       dispatch(setCredentials({ ...res.data }));
+      localStorage.setItem("isLoggedIn", true);
       navigate("/");
     } catch (error) {
-      console.log(error.data);
+      setError({ isError: true, message: error?.data?.message });
     }
   };
-  const handleForgotPassword = () => {};
+  // const handleForgotPassword = () => {};
 
   return (
     <div className="Login">
@@ -54,6 +61,7 @@ function Login() {
               value={username}
               onChange={handleUsernameChange}
               autoComplete="off"
+              maxLength={30}
             />
           </div>
           <div className="inputDiv passwordBox">
@@ -65,6 +73,7 @@ function Login() {
               value={password}
               onChange={handlePasswordChange}
               autoComplete="off"
+              maxLength={50}
             />
             <button
               type="button"
@@ -100,18 +109,18 @@ function Login() {
               )}
             </button>
           </div>
+          {error.isError && <p className="ErrorMessage">{error.message}</p>}
           <div className="SubmitBtn">
             <button type="submit" disabled={isLoading}>
               Login
             </button>
-            {isLoading && <p>Loading..</p>}
           </div>
         </form>
         <Link to="">Forgot Password</Link>
       </div>
       <div className="RegisterBtn">
         <p>
-          New user? <Link to="/Register">Sign up</Link>
+          New user? <Link to="/register">Sign up</Link>
         </p>
       </div>
     </div>

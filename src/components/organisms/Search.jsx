@@ -29,7 +29,7 @@ function Search() {
     // Set a timeout to update the debounced value after 3 seconds
     const handler = setTimeout(() => {
       setDebouncedValue(searchInput);
-    }, 2000);
+    }, 300);
 
     // Clear the timeout if the inputValue changes before the 3 seconds
     return () => {
@@ -62,8 +62,6 @@ function Search() {
 
   const handleOtherProfileClick = async (user) => {
     dispatch(searchModal(false));
-    // const res = await getUsersProfile(user._id).unwrap();
-    // console.log(res.data);
     navigate(`${user.username}`);
   };
 

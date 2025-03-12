@@ -52,7 +52,7 @@ function DashMenu() {
         </div>
 
         <div className="DashMenu-Suggestions">
-          <h4>Suggestions</h4>
+          <h4>Notifications</h4>
         </div>
         <div className="DashMenu-Footer"></div>
       </div>

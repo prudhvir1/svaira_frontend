@@ -2,6 +2,8 @@
 import { useSelector } from "react-redux";
 import "../styles/DesktopModal.css";
 import { CreatePost, Notifications, Search, ViewPost } from "../../organisms";
+import PostMenu from "../../organisms/PostMenu";
+import ProfileEdit from "../../organisms/ProfileEdit";
 
 function DesktopModal() {
   const {
@@ -9,6 +11,8 @@ function DesktopModal() {
     isCreateModal,
     isNotificationsModal,
     isViewPostModal,
+    isPostMenuModal,
+    isProfileEditModal,
   } = useSelector((state) => state.modal);
   return (
     <div className="DesktopModal">
@@ -16,6 +20,8 @@ function DesktopModal() {
       {isCreateModal && <CreatePost />}
       {isNotificationsModal && <Notifications />}
       {isViewPostModal && <ViewPost />}
+      {isPostMenuModal && <PostMenu />}
+      {isProfileEditModal && <ProfileEdit />}
     </div>
   );
 }

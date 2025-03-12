@@ -1,8 +1,12 @@
-import { Outlet } from "react-router";
+import { Navigate, Outlet } from "react-router";
 import "./styles/LoginPage.css";
 
 function LoginPage() {
-  return (
+  const status = JSON.parse(localStorage.getItem("isLoggedIn"));
+
+  return status ? (
+    <Navigate to="/" replace />
+  ) : (
     <main className="LoginPage">
       <Outlet />
     </main>

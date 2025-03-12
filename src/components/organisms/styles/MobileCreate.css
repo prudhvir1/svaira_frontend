@@ -102,6 +102,7 @@
 }
 
 .Form-Submit button {
+  position: relative;
   font-size: 1rem;
   border-radius: 0.5rem;
   height: 100%;

@@ -17,8 +17,6 @@ function MobileCreatePost() {
     { text: "", image: null, url: null, isError: false },
     { text: "", image: null, url: null, isError: false },
   ]);
-  const [tags, setTags] = useState([]);
-  const [isTags, setIsTags] = useState(false);
   const [isPostError, setIsPostError] = useState(false);
   const [isValidForm, setIsValidForm] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -45,7 +43,6 @@ function MobileCreatePost() {
         const formData = new FormData();
         formData.append("post", post.image);
         formData.append("postText", post.text);
-        formData.append("tags", tags);
 
         options.map((option, index) => {
           formData.append(`option${index + 1}Text`, option.text);

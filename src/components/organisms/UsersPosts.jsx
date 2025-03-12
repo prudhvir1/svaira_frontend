@@ -1,33 +1,32 @@
+/* eslint-disable react/prop-types */
 import "./styles/UsersPosts.css";
-import { useEffect, useState } from "react";
 import PostCard from "../molecules/PostCard/PostCard";
 import { useFetchUserPostsMutation } from "../../redux/api/postApiSlice";
+import MasonryLayout from "../utils/MasonryLayout";
+import Loader from "../utils/Loader";
+import { setUserPosts } from "../../redux/slices/postSlice";
+import { usePaginatedPosts } from "../../hooks/usePaginatedPosts";
 
 function UsersPosts({ userId }) {
-  const [posts, setPosts] = useState([]);
-  const [fetchUserPosts, { isLoading, isSuccess, isError }] =
-    useFetchUserPostsMutation();
-
-  const fetchPost = async () => {
-    const res = await fetchUserPosts(userId).unwrap();
-    setPosts(res.data);
-    console.log(res.data);
-  };
-
-  useEffect(() => {
-    if (userId) fetchPost();
-  }, [userId]);
+  const { data, isError, isSuccess, inViewRef, loadMore } = usePaginatedPosts(
+    useFetchUserPostsMutation,
+    { userId },
+    setUserPosts,
+    (state) => state.post.user
+  );
 
   return (
     <div className="UsersPosts">
-      <div className="UsersPosts-Container">
-        {isLoading && <p>Loading...</p>}
-        {isSuccess && posts.length === 0 && <p>No Posts to vote...</p>}
-        {isSuccess &&
-          posts.map((post) => <PostCard key={post._id} post={post} />)}
+      <MasonryLayout>
+        {isSuccess && data.length === 0 && <p>No Posts Available...</p>}
+        {data.map((post) => (
+          <PostCard key={post._id} post={post} isPipe={false} />
+        ))}
         {isError && <p>Something went wrong!</p>}
-      </div>
+        {loadMore && !isError && <Loader ref={inViewRef} />}
+      </MasonryLayout>
     </div>
   );
 }
+
 export default UsersPosts;

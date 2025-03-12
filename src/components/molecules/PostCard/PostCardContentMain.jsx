@@ -3,7 +3,7 @@ function PostCardContentMain({ imageObj, text, viewPost }) {
   return (
     <div className="PostCard-Content-Main">
       {imageObj && (
-        <div className="PostCard-Content-Main-Image">
+        <div className="PostCard-Content-Main-Image" onClick={viewPost}>
           <img src={imageObj.url} alt={imageObj.filename} />
         </div>
       )}

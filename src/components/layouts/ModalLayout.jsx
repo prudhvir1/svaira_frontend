@@ -11,16 +11,6 @@ function ModalLayout() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
-    <div>
-      {isMobile ? (
-        <MobileModal />
-      ) : (
-        <>
-          <DesktopModal />
-        </>
-      )}
-    </div>
-  );
+  return <div>{isMobile ? <MobileModal /> : <DesktopModal />}</div>;
 }
 export default ModalLayout;

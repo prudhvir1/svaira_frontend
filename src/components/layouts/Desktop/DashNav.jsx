@@ -3,7 +3,6 @@ import "../styles/DashNav.css";
 import { useDispatch, useSelector } from "react-redux";
 import { createModal, searchModal } from "../../../redux/slices/modalSlice";
 import { getProfile } from "../../../redux/slices/profileSlice";
-// import { getProfile } from "../../../redux/slices/profileSlice";
 
 function DashNav() {
   const dispatch = useDispatch();
@@ -59,7 +58,7 @@ function DashNav() {
           </li>
           <li
             style={{
-              background: location.pathname === "/Activity" ? "#111" : "",
+              background: location.pathname === "/activity" ? "#111" : "",
             }}
           >
             <Link to="Activity">
@@ -72,26 +71,6 @@ function DashNav() {
                 <path
                   fill="currentColor"
                   d="M12 29a1 1 0 0 1-.92-.62L6.33 17H2v-2h5a1 1 0 0 1 .92.62L12 25.28l8.06-21.63A1 1 0 0 1 21 3a1 1 0 0 1 .93.68L25.72 15H30v2h-5a1 1 0 0 1-.95-.68L21 7l-8.06 21.35A1 1 0 0 1 12 29"
-                ></path>
-              </svg>
-            </Link>
-          </li>
-
-          <li
-            style={{
-              background: location.pathname === "/Settings" ? "#111" : "",
-            }}
-          >
-            <Link to="Settings">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7 12a2 2 0 1 1-4 0a2 2 0 0 1 4 0m7 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0m7 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0"
                 ></path>
               </svg>
             </Link>

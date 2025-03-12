@@ -1,0 +1,150 @@
+.MobileProfileEdit {
+  height: 100dvh;
+  background: #333;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  overflow-x: hidden;
+}
+.MobileProfileEdit-Container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.MobileProfileEdit-Container > h1 {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: center;
+}
+
+.MobileProfileEdit-Container label,
+h5 {
+  all: unset;
+  font-size: 0.7rem;
+  color: #ccc;
+}
+.MobileProfileEdit-Avatar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.MobileProfileEdit-Name {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.MobileProfileEdit-Name input {
+  all: unset;
+  width: 100%;
+  border: 1px solid #777;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+}
+.MobileProfileEdit-Bio {
+  display: block;
+  width: 90%;
+}
+.MobileProfileEdit-Bio textarea {
+  all: unset;
+  width: 100%;
+  min-height: 3rem;
+  font-size: 0.8rem;
+  resize: none;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: transparent;
+  border: 1px solid #777;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+}
+.MobileProfileEdit-DateOfBirth {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.MobileProfileEdit-DateOfBirth input {
+  all: unset;
+  padding: 0.5rem;
+  border: 1px solid #777;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  margin-top: 0.3rem;
+}
+
+.MobileProfileEdit-Gender {
+  /* background: red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.MobileProfileEdit-Gender-Options {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.Gender-Container {
+  display: flex;
+  border: 1px solid #777;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.Gender-Label {
+  all: unset;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.Gender-Label:nth-child(2) {
+  border-left: 1px solid #777;
+  border-right: 1px solid #777;
+}
+
+.MobileProfileEdit-Gender-Options label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  font-size: 1rem;
+}
+
+.MobileProfileEdit-Buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.MobileProfileEdit-Buttons button {
+  cursor: pointer;
+  all: unset;
+  padding: 0.7rem 2rem;
+  outline: 2px solid #999;
+  border-radius: 0.2rem;
+  outline-offset: -2px;
+}
+
+.MobileProfileEdit-Buttons .cancel {
+  outline: none;
+  background: #ccc;
+  color: #222;
+}

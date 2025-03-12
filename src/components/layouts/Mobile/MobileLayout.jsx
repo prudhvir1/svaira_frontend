@@ -1,20 +1,16 @@
 import { Outlet } from "react-router";
 import "../styles/MobileLayout.css";
-import MobileDashNav from "./MobileDashNav";
-import MobileDashHeader from "./MobileDashHeader";
+import DashNav from "../Desktop/DashNav";
 
 function MobileLayout() {
   return (
     <div className="MobileLayout">
       <div className="MobileLayout-Main">
-        <header>
-          <MobileDashHeader />
-        </header>
         <main>
           <Outlet />
         </main>
         <nav>
-          <MobileDashNav />
+          <DashNav />
         </nav>
       </div>
     </div>

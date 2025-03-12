@@ -3,23 +3,21 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials } from "../slices/authSlice";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "http://localhost:5000/api/v1",
+  // baseUrl: "https://13.203.67.77/api/v1",
+  baseUrl: "https://13.203.67.77/api/v1",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     const token = getState().auth.accessToken;
 
     if (token) {
-      headers.set("authorization", `Bearer ${token}`);
+      headers.set("Authorization", `Bearer ${token}`);
     }
+    headers.set("Cache-Control", "max-age=600");
     return headers;
   },
 });
 
 const baseQueryWithReauth = async (args, api, extraOptions) => {
-  // console.log(args) // request url, method, body
-  // console.log(api) // signal, dispatch, getState()
-  // console.log(extraOptions) //custom like {shout: true}
-
   let result = await baseQuery(args, api, extraOptions);
 
   // If you want, handle other status codes, too

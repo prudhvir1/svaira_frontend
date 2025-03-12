@@ -1,6 +1,10 @@
 .ProfileCard {
   width: 100%;
-  padding: 1rem 0rem;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  background: #111;
+  border-bottom: 1px solid #555;
 }
 
 .ProfileCard-Container {
@@ -9,21 +13,17 @@
   height: 100%;
   display: flex;
   align-items: start;
-  justify-content: start;
-  gap: 2rem;
+  justify-content: space-between;
 }
 
-.ProfileCard-Avatar {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.ProfileCard-Avatar img {
+.ProfileCard-Left {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: start;
+  justify-content: start;
+  gap: 2rem;
 }
 
 .ProfileCard-Details {
@@ -31,40 +31,42 @@
   display: flex;
   align-items: center;
   justify-content: start;
-  flex-wrap: wrap;
   gap: 2rem;
 }
 
-.ProfileCard-Details-Name {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-}
-
-.ProfileCard-Details-Name p {
-  color: #fffa;
-  font-size: 0.8rem;
-}
-
-.ProfileCard-Details-Info {
+.ProfileCard-Right {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
+}
+
+.ProfileCard-Options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
-.ProfileCard-Details-Info-Block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.ProfileCard-Options button {
+  background: none;
+  border: 1px solid #aaa;
+  border: none;
+  line-height: 0;
+  padding: 0.3rem;
+  border-radius: 0.3rem;
 }
 
-.ProfileCard-Details-Info-Block p:nth-child(1) {
-  font-size: 1.2rem;
+.ProfileCard-Options .edit-btn {
+  font-size: 0.8rem;
+  border: 2px solid #555;
+  padding: 1rem;
+  border-radius: 0.2rem;
 }
 
-.ProfileCard-Details-Info-Block p:nth-child(2) {
-  font-size: 0.6rem;
+.ProfileCard-Options .settings-btn {
+  font-size: 1.5rem;
 }

@@ -14,7 +14,7 @@ import PostCardHeader from "./PostCardHeader";
 import PostCardFooter from "./PostCardFooter";
 import PostCardContent from "./PostCardContent";
 
-function PostCard({ post: data }) {
+function PostCard({ post: data, isPipe }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [post, setPost] = useState(data);
@@ -46,11 +46,18 @@ function PostCard({ post: data }) {
   };
 
   return (
-    <article className="PostCard">
+    <article
+      className="PostCard"
+      style={!isPipe ? { marginBottom: "2rem" } : {}}
+    >
       <PostBackground post={post} />
       <div className="PostCard-Container">
         <div className="PostCard-Header">
-          <PostCardHeader postedBy={post.postedBy} />
+          <PostCardHeader
+            postedBy={post.postedBy}
+            postId={post?._id}
+            isProfilePost={post.isProfilePost}
+          />
         </div>
         <div className="PostCard-Content">
           <PostCardContent

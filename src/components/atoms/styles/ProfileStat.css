@@ -1,0 +1,21 @@
+.ProfileStat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ProfileStat-Block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ProfileStat-Block p:nth-child(1) {
+  font-size: 1.2rem;
+}
+
+.ProfileStat-Block p:nth-child(2) {
+  font-size: 0.6rem;
+}

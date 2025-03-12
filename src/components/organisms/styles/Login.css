@@ -107,3 +107,8 @@
 .LoginContainer ::placeholder {
   font-size: 0.7rem;
 }
+
+.ErrorMessage {
+  color: red !important;
+  font-size: 0.8rem !important;
+}
