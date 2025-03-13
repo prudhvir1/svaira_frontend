@@ -36,7 +36,6 @@ function Login() {
     try {
       const res = await login({ username, password }).unwrap();
       dispatch(setCredentials({ ...res.data }));
-      localStorage.setItem("isLoggedIn", true);
       navigate("/");
     } catch (error) {
       setError({ isError: true, message: error?.data?.message });

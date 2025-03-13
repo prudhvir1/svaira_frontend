@@ -8,22 +8,26 @@
   font-family: Montserrat;
   src: url(./assets/fonts/Montserrat-Bold.ttf);
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
   font-family: Montserrat;
   src: url(./assets/fonts/Montserrat-Regular.ttf);
   font-weight: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: Montserrat;
   src: url(./assets/fonts/Montserrat-Medium.ttf);
   font-weight: medium;
+  font-display: swap;
 }
 @font-face {
   font-family: Montserrat;
   src: url(./assets/fonts/Montserrat-SemiBold.ttf);
   font-weight: 600;
+  font-display: swap;
 }
 
 * {

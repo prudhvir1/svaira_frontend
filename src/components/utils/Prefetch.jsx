@@ -8,12 +8,6 @@ import { postApiSlice } from "../../redux/api/postApiSlice";
 const Prefetch = () => {
   useEffect(() => {
     store.dispatch(profileApiSlice.endpoints.getProfile.initiate());
-    // store.dispatch(postApiSlice.endpoints.fetchPipePosts.initiate());
-
-    // return () => {
-    //   console.log("unsubscribing");
-    //   profile.unsubscribe();
-    // };
   }, []);
 
   return <Outlet />;

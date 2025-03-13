@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router";
 import { LoginPage, HomePage, SettingsPage } from "./components/pages";
-import { Prefetch, AuthRoutes, PersistLogin } from "./components/utils";
+import { Prefetch, AuthRoutes } from "./components/utils";
 import { Login, Register } from "./components/organisms";
 import ViewPost from "./components/organisms/ViewPost";
 import ProfileRoute from "./components/utils/ProfileRoute";
@@ -22,23 +22,23 @@ function App() {
           </Route>
 
           {/* Private Routes */}
-          <Route element={<PersistLogin />}>
-            <Route element={<AuthRoutes />}>
-              <Route element={<Prefetch />}>
-                {/* Main Start */}
-                <Route element={<DashLayout />}>
-                  <Route path="" element={<HomePage />} />
-                  <Route path="activity" element={<ActivityPage />} />
-                  <Route path=":username" element={<ProfileRoute />} />
-                  <Route path="settings" element={<SettingsPage />} />
-                </Route>
-                {/* Main End */}
-                {<Route path="/post/:post" element={<ViewPost />} />}
+          {/* <Route element={<PersistLogin />}> */}
+          <Route element={<AuthRoutes />}>
+            <Route element={<Prefetch />}>
+              {/* Main Start */}
+              <Route path="/" element={<DashLayout />}>
+                <Route path="" element={<HomePage />} />
+                <Route path="activity" element={<ActivityPage />} />
+                <Route path=":username" element={<ProfileRoute />} />
+                <Route path="settings" element={<SettingsPage />} />
               </Route>
+              {/* Main End */}
+              {<Route path="/post/:post" element={<ViewPost />} />}
             </Route>
           </Route>
-          {/* Private Routes End */}
         </Route>
+        {/* Private Routes End */}
+        {/* </Route> */}
       </Routes>
       {state.backgroundLocation && (
         <Routes>
