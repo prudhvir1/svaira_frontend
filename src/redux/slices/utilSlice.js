@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { isMobile: window.innerWidth <= 768 };
+const initialState = {
+  isMobile: window.innerWidth <= 768,
+  isScreenLoading: false,
+};
 
 const utilSlice = createSlice({
   name: "util",
@@ -8,6 +11,9 @@ const utilSlice = createSlice({
   reducers: {
     screenWidth: (state, action) => {
       state.isMobile = action.payload;
+    },
+    screenLoading: (state, action) => {
+      state.isScreenLoading = action.payload;
     },
   },
 });
