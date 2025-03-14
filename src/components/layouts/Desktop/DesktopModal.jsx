@@ -4,6 +4,7 @@ import "../styles/DesktopModal.css";
 import { CreatePost, Notifications, Search, ViewPost } from "../../organisms";
 import PostMenu from "../../organisms/PostMenu";
 import ProfileEdit from "../../organisms/ProfileEdit";
+import Settings from "../../organisms/Settings";
 
 function DesktopModal() {
   const {

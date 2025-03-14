@@ -69,7 +69,7 @@ const modalSlice = createSlice({
       state.isSettingsMenuModal = false;
     },
     settingsMenuModal: (state, action) => {
-      state.isModal = action.payload;
+      state.isModal = false;
       state.isViewPostModal = false;
       state.isCreateModal = false;
       state.isSearchModal = false;

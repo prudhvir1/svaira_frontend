@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
 import {
   useFollowUserMutation,
   useUnFollowUserMutation,
@@ -7,16 +6,13 @@ import {
 import ProfileAvatar from "../atoms/ProfileAvatar";
 import ProfileStat from "../atoms/ProfileStat";
 import ProfileTitle from "../atoms/ProfileTitle";
-import { eventEmitter } from "../utils/eventEmitter";
 import "./styles/UsersProfile.css";
 
-function UsersProfile({ userProfile }) {
-  const [profile, setProfile] = useState(userProfile);
+function UsersProfile({ profile, setProfile }) {
   const [followUser, { isLoading }] = useFollowUserMutation();
   const [unFollowUser, { isLoading: isUnfollowLoading }] =
     useUnFollowUserMutation();
 
-  console.log(isLoading, isUnfollowLoading);
   const handleFollowUser = async () => {
     const res = profile.isFollowing
       ? await unFollowUser(profile._id).unwrap()

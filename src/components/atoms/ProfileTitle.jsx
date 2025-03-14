@@ -6,7 +6,7 @@ function ProfileTitle({ fullname, bio }) {
     <div className="ProfileTitle">
       <div className="ProfileTitle-Container">
         <h3>{fullname}</h3>
-        {bio ? <p>{bio}</p> : <p style={{ color: "#999" }}>Add Bio</p>}
+        {bio ? <p>{bio}</p> : <p style={{ color: "#999" }}></p>}
       </div>
     </div>
   );

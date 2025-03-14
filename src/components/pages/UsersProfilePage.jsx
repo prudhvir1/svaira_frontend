@@ -29,7 +29,7 @@ function UsersProfilePage() {
       {isLoading && <p>Loading...</p>}
       {isSuccess && (
         <>
-          <UsersProfile userProfile={userProfile} />
+          <UsersProfile profile={userProfile} setProfile={setUserProfile} />
           <Suspense fallback={<p>Loading</p>}>
             <UsersPosts userId={userProfile?._id} />
           </Suspense>

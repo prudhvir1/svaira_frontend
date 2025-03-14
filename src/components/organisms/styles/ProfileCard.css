@@ -44,6 +44,7 @@
 }
 
 .ProfileCard-Options {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,4 +70,8 @@
 
 .ProfileCard-Options .settings-btn {
   font-size: 1.5rem;
+}
+
+.SettingsM-Menu {
+  position: relative;
 }

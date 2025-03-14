@@ -3,10 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import ProfileAvatar from "../atoms/ProfileAvatar";
 import ProfileTitle from "../atoms/ProfileTitle";
 import ProfileStat from "../atoms/ProfileStat";
-import { profileEditModal } from "../../redux/slices/modalSlice";
+import {
+  profileEditModal,
+  settingsMenuModal,
+} from "../../redux/slices/modalSlice";
+import Settings from "./Settings";
 
 function ProfileCard() {
   const { profile } = useSelector((state) => state.profile);
+  const { isSettingsMenuModal } = useSelector((state) => state.modal);
 
   const dispatch = useDispatch();
 
@@ -35,9 +40,13 @@ function ProfileCard() {
             >
               Edit profile
             </button>
-            <button className="settings-btn">
-              <Settings />
+            <button
+              className="settings-btn"
+              onClick={() => dispatch(settingsMenuModal(true))}
+            >
+              <SettingsIcon />
             </button>
+            {isSettingsMenuModal && <Settings />}
           </div>
         </div>
       </div>
@@ -46,7 +55,7 @@ function ProfileCard() {
 }
 export default ProfileCard;
 
-function Settings() {
+function SettingsIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
