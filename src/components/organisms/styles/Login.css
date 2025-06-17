@@ -21,17 +21,41 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  color: #191919;
 }
 
+.Login-Logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Login-Logo > h3:first-child {
+  line-height: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background: #e98c00;
+  color: #f6f6f6;
+}
+
+.Login-Logo > h3 {
+  font-weight: 700;
+}
+
+.Login-Logo > h3 > sub {
+  font-weight: 500;
+  font-size: 0.7rem;
+}
 .LoginContainer > h3 {
-  color: black;
+  font-size: 1.5rem;
+  text-align: center;
   font-weight: 700;
 }
 
 .LoginContainer > p {
-  color: black;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .LoginContainer a {

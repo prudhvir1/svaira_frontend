@@ -4,7 +4,7 @@ import "../styles/DesktopModal.css";
 import { CreatePost, Notifications, Search, ViewPost } from "../../organisms";
 import PostMenu from "../../organisms/PostMenu";
 import ProfileEdit from "../../organisms/ProfileEdit";
-import Settings from "../../organisms/Settings";
+import ViewComments from "../../organisms/ViewComments";
 
 function DesktopModal() {
   const {
@@ -14,7 +14,10 @@ function DesktopModal() {
     isViewPostModal,
     isPostMenuModal,
     isProfileEditModal,
+    isCommentsModal,
   } = useSelector((state) => state.modal);
+
+  console.log(isCommentsModal);
   return (
     <div className="DesktopModal">
       {isSearchModal && <Search />}
@@ -23,6 +26,7 @@ function DesktopModal() {
       {isViewPostModal && <ViewPost />}
       {isPostMenuModal && <PostMenu />}
       {isProfileEditModal && <ProfileEdit />}
+      {isCommentsModal && <ViewComments />}
     </div>
   );
 }

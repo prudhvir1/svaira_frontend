@@ -55,11 +55,6 @@ function Search() {
     }
   }, [debouncedValue]);
 
-  // const handleSearch = async () => {
-  //   const res = await searchUser(searchInput).unwrap();
-  //   setFoundUsers(res.data);
-  // };
-
   const handleOtherProfileClick = async (user) => {
     dispatch(searchModal(false));
     navigate(`${user.username}`);

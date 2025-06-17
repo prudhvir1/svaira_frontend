@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const modalSlice = createSlice({
   name: "modal",
   initialState: {
+    data: null,
     isModal: false,
     isSearchModal: false,
     isCreateModal: false,
@@ -10,7 +11,7 @@ const modalSlice = createSlice({
     isPostMenuModal: false,
     isProfileEditModal: false,
     isSettingsMenuModal: false,
-    data: null,
+    isCommentsModal: false,
   },
   reducers: {
     searchModal: (state, action) => {
@@ -22,6 +23,7 @@ const modalSlice = createSlice({
       state.isPostMenuModal = false;
       state.isProfileEditModal = false;
       state.isSettingsMenuModal = false;
+      state.isCommentsModal = false;
     },
     createModal: (state, action) => {
       state.isModal = action.payload;
@@ -32,6 +34,7 @@ const modalSlice = createSlice({
       state.isPostMenuModal = false;
       state.isProfileEditModal = false;
       state.isSettingsMenuModal = false;
+      state.isCommentsModal = false;
     },
     notificationsModal: (state, action) => {
       state.isModal = action.payload;
@@ -42,6 +45,7 @@ const modalSlice = createSlice({
       state.isPostMenuModal = false;
       state.isProfileEditModal = false;
       state.isSettingsMenuModal = false;
+      state.isCommentsModal = false;
     },
     postMenuModal: (state, action) => {
       const { value, postId } = action.payload;
@@ -54,6 +58,7 @@ const modalSlice = createSlice({
       state.isPostMenuModal = value;
       state.isProfileEditModal = false;
       state.isSettingsMenuModal = false;
+      state.isCommentsModal = false;
     },
     profileEditModal: (state, action) => {
       const { value, data } = action.payload;
@@ -67,6 +72,7 @@ const modalSlice = createSlice({
       state.isPostMenuModal = false;
       state.isProfileEditModal = value;
       state.isSettingsMenuModal = false;
+      state.isCommentsModal = false;
     },
     settingsMenuModal: (state, action) => {
       state.isModal = false;
@@ -77,6 +83,19 @@ const modalSlice = createSlice({
       state.isPostMenuModal = false;
       state.isProfileEditModal = false;
       state.isSettingsMenuModal = action.payload;
+      state.isCommentsModal = false;
+    },
+    commentsModal: (state, action) => {
+      state.data = action.payload.data;
+      state.isModal = action.payload.value;
+      state.isViewPostModal = false;
+      state.isCreateModal = false;
+      state.isSearchModal = false;
+      state.isNotificationsModal = false;
+      state.isPostMenuModal = false;
+      state.isProfileEditModal = false;
+      state.isSettingsMenuModal = false;
+      state.isCommentsModal = action.payload.value;
     },
   },
 });
@@ -88,6 +107,7 @@ export const {
   postMenuModal,
   profileEditModal,
   settingsMenuModal,
+  commentsModal,
 } = modalSlice.actions;
 export default modalSlice.reducer;
 

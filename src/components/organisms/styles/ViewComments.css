@@ -22,6 +22,145 @@
   justify-content: center;
 }
 
+.ViewPost-Content {
+  position: relative;
+  height: 100%;
+  width: 55%;
+  display: flex;
+  justify-content: space-evenly;
+  background: rgba(32, 32, 32, 0.759);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(5rem);
+}
+
+.ViewPost-Content > img {
+  border-radius: 0.5rem;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
+  object-fit: cover;
+}
+
+.ViewPost-Content-Foreground {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background: rgba(45, 45, 45, 0.7);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(5rem);
+  /* z-index: 1000; */
+}
+
+.ViewPost-Left {
+  width: 45%;
+  height: 100%;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.ViewPost-Left-Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+}
+
+.ViewPost-Left-Header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 0.5rem;
+}
+
+.ViewPost-Left-Header-Left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.ViewPost-Left-Header-Avatar {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+.ViewPost-Left-Header-Avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ViewPost-Left-Header-Username p {
+  font-size: 0.9rem;
+  /* opacity: 0.7\\; */
+}
+
+.ViewPost-Left-Header-Right {
+}
+
+.ViewPost-Left-Header-Right button {
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  line-height: 0;
+  padding: 0.2rem;
+  border-radius: 5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.ViewPost-Left-Header-Right button:hover {
+  background: #333;
+  /* padding: 1rem; */
+}
+
+.ViewPost-Left-Post {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.ViewPost-Left-Image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ViewPost-Left-Image img {
+  width: 100%;
+  max-height: 15rem;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+
+.ViewPost-Left-Text {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.ViewPost-Left-Options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+}
+
 .ViewPost-Right {
   width: 45%;
   height: 100%;

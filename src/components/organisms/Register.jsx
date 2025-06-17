@@ -62,10 +62,14 @@ function Register() {
 
   return (
     <div className="Register">
+      <div className="Login-Logo">
+        <h3>S.</h3>
+        <p>post your poll</p>
+      </div>
       <div className="RegisterContainer">
-        <h2>Hey buddy!</h2>
+        <h2>Signup</h2>
         <p>
-          <strong>Sign up</strong> and post your <strong>poll</strong>.
+          Welcome to<strong> SVAIRA.</strong>
         </p>
 
         <form onSubmit={handleSubmit}>

@@ -136,14 +136,14 @@ function CreatePost() {
 
             {/* Tags Container Block */}
 
-            <div className="Tags-Container">
+            {/* <div className="Tags-Container">
               <textarea
                 name="tags"
                 id=""
                 onChange={handleTags}
                 placeholder="Add Tags"
               ></textarea>
-            </div>
+            </div> */}
 
             {/* Error Message Block */}
 

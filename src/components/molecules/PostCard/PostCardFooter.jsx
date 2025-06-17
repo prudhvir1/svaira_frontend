@@ -1,7 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useRef, useState } from "react";
+import { commentsModal } from "../../../redux/slices/modalSlice";
+import { useDispatch } from "react-redux";
 
-function PostCardFooter({ viewPost, onClick }) {
+function PostCardFooter({ postId, onClick }) {
+  const dispatch = useDispatch();
   const [comment, setComment] = useState("");
   const commentRef = useRef();
 
@@ -30,8 +33,11 @@ function PostCardFooter({ viewPost, onClick }) {
         </div>
       </div>
       <hr />
-      <div className="PostCard-Footer-Comments" onClick={viewPost}>
-        <button className="PostCard-Footer-Comments-Button">
+      <div className="PostCard-Footer-Comments">
+        <button
+          className="PostCard-Footer-Comments-Button"
+          onClick={() => dispatch(commentsModal({ data: postId, value: true }))}
+        >
           <ChatIcon />
         </button>
         {/* <div className="PostCard-Footer-Comments-Count">

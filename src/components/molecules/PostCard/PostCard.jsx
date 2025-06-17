@@ -26,7 +26,7 @@ function PostCard({ post: data, isPipe }) {
   const [addComments] = useAddCommentMutation();
 
   const handleViewPost = () => {
-    navigate(`/post/${post._id}`, { state: { backgroundLocation: location } });
+    // navigate(`/post/${post._id}`, { state: { backgroundLocation: location } });
   };
 
   const handleOptionClick = async (optionId) => {
@@ -73,10 +73,7 @@ function PostCard({ post: data, isPipe }) {
           )}
         </div>
         <div className="PostCard-Footer">
-          <PostCardFooter
-            viewPost={handleViewPost}
-            onClick={handleAddComment}
-          />
+          <PostCardFooter postId={post._id} onClick={handleAddComment} />
         </div>
       </div>
     </article>

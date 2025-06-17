@@ -4,7 +4,7 @@ import { Navigate, Outlet } from "react-router";
 import { accessTokenSelector } from "../../redux/slices/authSlice";
 import { useRefreshMutation } from "../../redux/api/authApiSlice";
 import { useEffect } from "react";
-import Loader from "./Loader";
+import ScreenLoader from "../organisms/ScreenLoader";
 
 function AuthRoutes() {
   const token = useSelector(accessTokenSelector);
@@ -30,7 +30,7 @@ function AuthRoutes() {
   if (isLoading) {
     //persist: yes, token: no
     console.log("loading");
-    content = <Loader />;
+    content = <ScreenLoader />;
   } else if (isError) {
     //persist: yes, token: no
     console.log("error");

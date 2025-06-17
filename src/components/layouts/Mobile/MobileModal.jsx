@@ -4,6 +4,7 @@ import "../styles/MobileModal.css";
 import { MobileCreatePost, MobileSearch, Notifications } from "../../organisms";
 import PostMenu from "../../organisms/PostMenu";
 import MobileProfileEdit from "../../organisms/MobileProfileEdit";
+import ViewComments from "../../organisms/ViewComments";
 
 function MobileModal() {
   const {
@@ -12,6 +13,7 @@ function MobileModal() {
     isNotificationsModal,
     isPostMenuModal,
     isProfileEditModal,
+    isCommentsModal,
   } = useSelector((state) => state.modal);
   return (
     <div className="MobileModal">
@@ -20,6 +22,7 @@ function MobileModal() {
       {isNotificationsModal && <Notifications />}
       {isPostMenuModal && <PostMenu />}
       {isProfileEditModal && <MobileProfileEdit />}
+      {isCommentsModal && <ViewComments />}
     </div>
   );
 }

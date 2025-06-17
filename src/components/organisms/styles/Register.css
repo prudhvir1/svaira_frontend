@@ -10,7 +10,7 @@
 .RegisterContainer {
   width: fit-content;
   height: fit-content;
-  padding: 2rem;
+  padding: 1rem 2rem 2rem;
   background: #f8f8ff;
   border-radius: 0.5rem;
   display: flex;

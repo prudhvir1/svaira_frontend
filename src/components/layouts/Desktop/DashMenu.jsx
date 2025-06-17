@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { createModal } from "../../../redux/slices/modalSlice";
 import { getProfile } from "../../../redux/slices/profileSlice";
 import { useNavigate } from "react-router";
+import { Search } from "../../organisms";
 
 function DashMenu() {
   const dispatch = useDispatch();
@@ -28,6 +29,7 @@ function DashMenu() {
             <img src={profile?.avatar.url} alt={profile?.avatar.filename} />
           </div>
         </div>
+        <div className="DashMenu-Search"></div>
         <div className="DashMenu-CreatePost">
           <button onClick={() => dispatch(createModal(true))}>
             <svg

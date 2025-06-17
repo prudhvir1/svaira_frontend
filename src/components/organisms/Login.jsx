@@ -45,11 +45,13 @@ function Login() {
 
   return (
     <div className="Login">
+      <div className="Login-Logo">
+        <h3>S.</h3>
+        <p>post your poll</p>
+      </div>
       <div className="LoginContainer">
-        <h3>Welcome back, buddy!</h3>
-        <p>
-          <strong>Login</strong> and post your <strong>poll</strong>.
-        </p>
+        <h3>Login</h3>
+        <p>Welcome back, buddy!</p>
         <form onSubmit={handleSubmit}>
           <div className="inputDiv usernameBox">
             <input
